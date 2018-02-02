@@ -1,15 +1,31 @@
 PODS:
   - Alamofire (4.6.0)
-  - SwiftyUserDefaults (3.0.0)
+  - LKAlertController (1.12.1)
+  - ObjectMapper (3.1.0)
+  - PromiseKit (4.5.2):
+    - PromiseKit/Foundation (= 4.5.2)
+    - PromiseKit/QuartzCore (= 4.5.2)
+    - PromiseKit/UIKit (= 4.5.2)
+  - PromiseKit/CorePromise (4.5.2)
+  - PromiseKit/Foundation (4.5.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.5.2):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.5.2):
+    - PromiseKit/CorePromise
 
 DEPENDENCIES:
   - Alamofire
-  - SwiftyUserDefaults
+  - LKAlertController
+  - ObjectMapper (~> 3.1)
+  - PromiseKit (~> 4.4)
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
+  LKAlertController: e229465c0b4543ea122bfe62567747e6213ee43f
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  PromiseKit: 743e497a5f505a470d3bbbf4ce0663c1268af0a4
 
-PODFILE CHECKSUM: 725394d7a57f560b07d8ba028b2c1c927f2f7ada
+PODFILE CHECKSUM: eb4cf1279b4cb564795352ffc7b997233abb8570
 
 COCOAPODS: 1.4.0
