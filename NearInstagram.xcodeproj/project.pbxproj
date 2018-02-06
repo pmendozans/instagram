@@ -9,8 +9,21 @@
 /* Begin PBXBuildFile section */
 		0F87F9DDC2AD9AC5B7B82D25 /* Pods_NearInstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9CE3D44CA6E4528F81D131A /* Pods_NearInstagramUITests.framework */; };
 		142F9724D04AFB46DE8F48F3 /* Pods_NearInstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7EE1976AD59AA0054F6A55 /* Pods_NearInstagramTests.framework */; };
+		7214A84220251786004360FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84120251786004360FD /* User.swift */; };
+		7214A84420251C7E004360FD /* UserCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84320251C7E004360FD /* UserCounts.swift */; };
+		7214A84620252235004360FD /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84520252235004360FD /* Media.swift */; };
+		7214A84E20253110004360FD /* MediaReource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84D20253110004360FD /* MediaReource.swift */; };
+		7214A85220253489004360FD /* TagsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A85120253489004360FD /* TagsRouter.swift */; };
+		7214A858202A21C5004360FD /* TagPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A857202A21C5004360FD /* TagPhotosView.swift */; };
+		7214A85F202A54EB004360FD /* PhotosTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A85E202A54EB004360FD /* PhotosTabBarController.swift */; };
+		7214A861202A55EC004360FD /* TagPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A860202A55EC004360FD /* TagPhotosViewController.swift */; };
+		7214A865202A610C004360FD /* LoginViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A864202A610C004360FD /* LoginViewController+Constraints.swift */; };
+		7214A867202A611B004360FD /* LoginViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A866202A611B004360FD /* LoginViewController+UI.swift */; };
+		7214A869202A6981004360FD /* TagPhotosViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A868202A6981004360FD /* TagPhotosViewController+Constraints.swift */; };
+		7214A86B202A698D004360FD /* TagPhotosViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86A202A698D004360FD /* TagPhotosViewController+UI.swift */; };
+		7214A86D202A6DBC004360FD /* TagsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86C202A6DBC004360FD /* TagsManager.swift */; };
+		7214A86F202A6F58004360FD /* TagsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86E202A6F58004360FD /* TagsDecoder.swift */; };
 		7287A802202276B7008C6938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287A801202276B7008C6938 /* AppDelegate.swift */; };
-		7287A807202276B7008C6938 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7287A805202276B7008C6938 /* Main.storyboard */; };
 		7287A809202276B7008C6938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7287A808202276B7008C6938 /* Assets.xcassets */; };
 		7287A80C202276B7008C6938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7287A80A202276B7008C6938 /* LaunchScreen.storyboard */; };
 		7287A817202276B7008C6938 /* NearInstagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287A816202276B7008C6938 /* NearInstagramTests.swift */; };
@@ -42,9 +55,22 @@
 /* Begin PBXFileReference section */
 		0375687B5AA1B0C7C0B35158 /* Pods-NearInstagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearInstagramUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NearInstagramUITests/Pods-NearInstagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DAD771299999D186E05AE33 /* Pods_NearInstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearInstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7214A84120251786004360FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7214A84320251C7E004360FD /* UserCounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCounts.swift; sourceTree = "<group>"; };
+		7214A84520252235004360FD /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		7214A84D20253110004360FD /* MediaReource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaReource.swift; sourceTree = "<group>"; };
+		7214A85120253489004360FD /* TagsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRouter.swift; sourceTree = "<group>"; };
+		7214A857202A21C5004360FD /* TagPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPhotosView.swift; sourceTree = "<group>"; };
+		7214A85E202A54EB004360FD /* PhotosTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTabBarController.swift; sourceTree = "<group>"; };
+		7214A860202A55EC004360FD /* TagPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPhotosViewController.swift; sourceTree = "<group>"; };
+		7214A864202A610C004360FD /* LoginViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Constraints.swift"; sourceTree = "<group>"; };
+		7214A866202A611B004360FD /* LoginViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+UI.swift"; sourceTree = "<group>"; };
+		7214A868202A6981004360FD /* TagPhotosViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagPhotosViewController+Constraints.swift"; sourceTree = "<group>"; };
+		7214A86A202A698D004360FD /* TagPhotosViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagPhotosViewController+UI.swift"; sourceTree = "<group>"; };
+		7214A86C202A6DBC004360FD /* TagsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsManager.swift; sourceTree = "<group>"; };
+		7214A86E202A6F58004360FD /* TagsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsDecoder.swift; sourceTree = "<group>"; };
 		7287A7FE202276B7008C6938 /* NearInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7287A801202276B7008C6938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7287A806202276B7008C6938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7287A808202276B7008C6938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7287A80B202276B7008C6938 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7287A80D202276B7008C6938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +131,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7214A859202A2505004360FD /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				7214A857202A21C5004360FD /* TagPhotosView.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		7214A85A202A2A2D004360FD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		7214A85D202A54C8004360FD /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				7214A85E202A54EB004360FD /* PhotosTabBarController.swift */,
+				7214A860202A55EC004360FD /* TagPhotosViewController.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
 		7287A7F5202276B7008C6938 = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +187,6 @@
 				7287A83020227885008C6938 /* Models */,
 				7287A82F2022786E008C6938 /* Controllers */,
 				7287A801202276B7008C6938 /* AppDelegate.swift */,
-				7287A805202276B7008C6938 /* Main.storyboard */,
 				7287A808202276B7008C6938 /* Assets.xcassets */,
 				7287A80A202276B7008C6938 /* LaunchScreen.storyboard */,
 				7287A80D202276B7008C6938 /* Info.plist */,
@@ -166,6 +215,7 @@
 		7287A82F2022786E008C6938 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7214A85D202A54C8004360FD /* Photos */,
 				7287A83720227B07008C6938 /* Login */,
 			);
 			path = Controllers;
@@ -174,6 +224,10 @@
 		7287A83020227885008C6938 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7214A84120251786004360FD /* User.swift */,
+				7214A84320251C7E004360FD /* UserCounts.swift */,
+				7214A84520252235004360FD /* Media.swift */,
+				7214A84D20253110004360FD /* MediaReource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,6 +235,8 @@
 		7287A8312022788C008C6938 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7214A85A202A2A2D004360FD /* Login */,
+				7214A859202A2505004360FD /* Photos */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -198,6 +254,9 @@
 			isa = PBXGroup;
 			children = (
 				7287A83520227933008C6938 /* ApiManager.swift */,
+				7214A85120253489004360FD /* TagsRouter.swift */,
+				7214A86C202A6DBC004360FD /* TagsManager.swift */,
+				7214A86E202A6F58004360FD /* TagsDecoder.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -221,6 +280,10 @@
 			isa = PBXGroup;
 			children = (
 				7287A83D20229897008C6938 /* DefaultKeys+AppKeys.swift */,
+				7214A864202A610C004360FD /* LoginViewController+Constraints.swift */,
+				7214A866202A611B004360FD /* LoginViewController+UI.swift */,
+				7214A868202A6981004360FD /* TagPhotosViewController+Constraints.swift */,
+				7214A86A202A698D004360FD /* TagPhotosViewController+UI.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,7 +419,6 @@
 			files = (
 				7287A80C202276B7008C6938 /* LaunchScreen.storyboard in Resources */,
 				7287A809202276B7008C6938 /* Assets.xcassets in Resources */,
-				7287A807202276B7008C6938 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +480,8 @@
 				"${BUILT_PRODUCTS_DIR}/LKAlertController/LKAlertController.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -425,6 +489,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LKAlertController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -537,11 +603,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7214A861202A55EC004360FD /* TagPhotosViewController.swift in Sources */,
+				7214A86B202A698D004360FD /* TagPhotosViewController+UI.swift in Sources */,
+				7214A86F202A6F58004360FD /* TagsDecoder.swift in Sources */,
+				7214A84420251C7E004360FD /* UserCounts.swift in Sources */,
 				7287A83B20227DF6008C6938 /* InstagramLoginManager.swift in Sources */,
+				7214A86D202A6DBC004360FD /* TagsManager.swift in Sources */,
 				7287A83920227B42008C6938 /* LoginViewController.swift in Sources */,
+				7214A85220253489004360FD /* TagsRouter.swift in Sources */,
+				7214A84220251786004360FD /* User.swift in Sources */,
 				7287A83E20229897008C6938 /* DefaultKeys+AppKeys.swift in Sources */,
+				7214A867202A611B004360FD /* LoginViewController+UI.swift in Sources */,
+				7214A85F202A54EB004360FD /* PhotosTabBarController.swift in Sources */,
 				7287A83620227933008C6938 /* ApiManager.swift in Sources */,
+				7214A84E20253110004360FD /* MediaReource.swift in Sources */,
+				7214A84620252235004360FD /* Media.swift in Sources */,
+				7214A865202A610C004360FD /* LoginViewController+Constraints.swift in Sources */,
 				7287A802202276B7008C6938 /* AppDelegate.swift in Sources */,
+				7214A858202A21C5004360FD /* TagPhotosView.swift in Sources */,
+				7214A869202A6981004360FD /* TagPhotosViewController+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,14 +657,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7287A805202276B7008C6938 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7287A806202276B7008C6938 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7287A80A202276B7008C6938 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

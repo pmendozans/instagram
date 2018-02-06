@@ -7,7 +7,7 @@ target 'NearInstagram' do
   pod 'PromiseKit', '~> 4.4'
   pod 'ObjectMapper', '~> 3.1'
   pod 'LKAlertController'
-  
+  pod 'PureLayout'
   # Pods for NearInstagram
 
   target 'NearInstagramTests' do
