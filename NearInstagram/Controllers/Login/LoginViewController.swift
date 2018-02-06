@@ -8,25 +8,33 @@
 
 import UIKit
 import WebKit
+import SwiftyUserDefaults
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var webView: WKWebView!
+    var webView: WKWebView!
+    var activityIndicator: UIActivityIndicatorView!
     
     private let instagramLoginManager = InstagramLoginManager()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        webView.navigationDelegate = self
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadUIViews()
+        addConstraintsToViews()
         loadInstagramLogin()
+        webView.navigationDelegate = self
     }
     
-    func loadInstagramLogin(){
+    func loadInstagramLogin() {
         guard let loginRequest = instagramLoginManager.getUrlRequest() else {
             return
         }
         webView.load(loginRequest)
+    }
+    
+    func navigateToPhotos() {
+        let photosTabController = PhotosTabBarController()
+        present(photosTabController, animated: true, completion: nil)
     }
 }
 
@@ -42,6 +50,8 @@ extension LoginViewController: WKNavigationDelegate {
         if(instagramLoginManager.isRedirectUrl(urlString: requestUrlString)) {
             let authToken = instagramLoginManager.getAuthenticationToken(urlString: requestUrlString)
             decisionHandler(.cancel)
+            Defaults[.instagramToken] = authToken
+            navigateToPhotos()
         }
         else{
             decisionHandler(.allow)
