@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import SwiftyUserDefaults
 
 enum TagsRouter {
     static let apiUrlString = "tags/%@/media/recent"
@@ -26,7 +27,7 @@ extension TagsRouter: URLRequestConvertible {
         let params: ([String: Any]?) = {
             switch self {
             case .get:
-                return nil
+                return ["access_token": Defaults[.instagramToken], "COUNT": 100]
             }
         }()
         
@@ -43,10 +44,18 @@ extension TagsRouter: URLRequestConvertible {
             return url
         }()
         
+        let encoding: ParameterEncoding = {
+            switch method {
+            case .get:
+                return URLEncoding.default
+            default:
+                return JSONEncoding.default
+            }
+        }()
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
 
-        let encoding = JSONEncoding.default
         return try encoding.encode(urlRequest, with: params)
     }
 }

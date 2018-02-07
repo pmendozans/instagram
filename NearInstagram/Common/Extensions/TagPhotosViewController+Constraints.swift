@@ -7,12 +7,11 @@
 //
 
 import Foundation
+import PureLayout
 
-func addConstraintsToViews() {
-    /*
-    webView.autoMatch(.height, to: .height, of: view)
-    webView.autoMatch(.width, to: .width, of: view)
-    activityIndicator.autoCenterInSuperview()
-    activityIndicator.startAnimating()
-     */
+extension TagPhotosViewController {
+    func addConstraintsToViews() {
+        tableView.autoMatch(.height, to: .height, of: view)
+        tableView.autoMatch(.width, to: .width, of: view)
+    }
 }

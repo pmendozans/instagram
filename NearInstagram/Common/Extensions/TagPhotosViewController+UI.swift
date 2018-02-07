@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 extension TagPhotosViewController {
     func loadUIViews() {
-        
+        tableView = UITableView()
+        view.addSubview(tableView)
     }
 }

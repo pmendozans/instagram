@@ -7,17 +7,29 @@
 //
 
 import UIKit
+import PromiseKit
 
 class TagPhotosViewController: UIViewController {
 
     var tagName: String!
     var tableView: UITableView!
     var mediaItems: [Media] = []
+    var tagsManager = TagsManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUIViews()
         setupTableView()
+        loadMediaFromAPI()
+    }
+    
+    func loadMediaFromAPI() {
+        tagsManager.getImages(byTag: "iphone").then { mediaItems -> Void in
+            self.mediaItems = mediaItems
+            self.tableView.reloadData()
+        }.catch { error in
+            print(error.localizedDescription)
+        }
     }
     
     func setupTableView() {

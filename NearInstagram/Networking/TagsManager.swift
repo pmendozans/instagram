@@ -9,7 +9,7 @@
 import Foundation
 import PromiseKit
 
-class TagsSerializer {
+class TagsManager {
     let apiManager = ApiManager()
     let tagsDecoder = TagsDecoder()
     
