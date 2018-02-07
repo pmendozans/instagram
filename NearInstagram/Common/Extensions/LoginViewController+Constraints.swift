@@ -12,9 +12,6 @@ import PureLayout
 
 extension LoginViewController {
     func addConstraintsToViews() {
-        webView.autoMatch(.height, to: .height, of: view)
-        webView.autoMatch(.width, to: .width, of: view)
-        activityIndicator.autoCenterInSuperview()
-        activityIndicator.startAnimating()
+
     }
 }

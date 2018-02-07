@@ -9,27 +9,26 @@
 import UIKit
 import WebKit
 import SwiftyUserDefaults
+import PinterestSDK
 
 class LoginViewController: UIViewController {
     
-    var webView: WKWebView!
-    var activityIndicator: UIActivityIndicatorView!
+    var loginButton: WKWebView!
     
     private let instagramLoginManager = InstagramLoginManager()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadUIViews()
-        addConstraintsToViews()
-        loadInstagramLogin()
-        webView.navigationDelegate = self
+        loginWithPinterest()
     }
     
-    func loadInstagramLogin() {
-        guard let loginRequest = instagramLoginManager.getUrlRequest() else {
-            return
-        }
-        webView.load(loginRequest)
+    func loginWithPinterest() {
+        print("LOLS")
+        PDKClient.sharedInstance().authenticate(withPermissions: [""], from: self, withSuccess: {_ in
+            
+        }, andFailure: {_ in
+            
+        })
     }
     
     func navigateToPhotos() {
@@ -38,23 +37,3 @@ class LoginViewController: UIViewController {
     }
 }
 
-extension LoginViewController: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        activityIndicator.stopAnimating()
-    }
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        guard let requestUrlString = navigationAction.request.url?.absoluteString else {
-            return
-        }
-        if(instagramLoginManager.isRedirectUrl(urlString: requestUrlString)) {
-            let authToken = instagramLoginManager.getAuthenticationToken(urlString: requestUrlString)
-            decisionHandler(.cancel)
-            Defaults[.instagramToken] = authToken
-            navigateToPhotos()
-        }
-        else{
-            decisionHandler(.allow)
-        }
-    }
-}

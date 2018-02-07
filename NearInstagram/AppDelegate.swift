@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import PinterestSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let pinterestAppId = "4949323701479819048"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        PDKClient.configureSharedInstance(withAppId: pinterestAppId)
         loadMainView()
         return true
     }
