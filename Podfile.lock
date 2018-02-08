@@ -33,6 +33,7 @@ PODS:
     - PromiseKit/CorePromise
   - PureLayout (3.0.2)
   - SAMKeychain (1.5.3)
+  - SwiftyJSON (4.0.0)
   - SwiftyUserDefaults (3.0.0)
 
 DEPENDENCIES:
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - PinterestSDK (from `https://github.com/pinterest/ios-pdk.git`)
   - PromiseKit (~> 4.4)
   - PureLayout
+  - SwiftyJSON
   - SwiftyUserDefaults
 
 EXTERNAL SOURCES:
@@ -62,8 +64,9 @@ SPEC CHECKSUMS:
   PromiseKit: 743e497a5f505a470d3bbbf4ce0663c1268af0a4
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: d578a9200b2018b0a8263023d9110b3e706dacc5
+PODFILE CHECKSUM: 53e4e04e3b0ec48046e1a8be96fd46873e26031e
 
 COCOAPODS: 1.4.0

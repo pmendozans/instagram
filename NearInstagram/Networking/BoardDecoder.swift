@@ -9,11 +9,21 @@
 import Foundation
 import PromiseKit
 import ObjectMapper
+import Alamofire
+import SwiftyJSON
 
 class BoardDecoder {
-    func decodeMedia(jsonDictionary: [String: Any]) -> Promise<[Media]> {
-        let mediaItems = Mapper<Media>().mapArray(JSONArray: [jsonDictionary])
+    func decodeMedia(jsonDictionary: Parameters) -> Promise<[Pin]> {
         return Promise { fullfill, reject in
+            let json = JSON(jsonDictionary)
+            guard let pinData = json["data"].array else {
+                reject("" as! Error)
+                return
+            }
+            guard let mediaItems = Mapper<Pin>().mapArray(JSONString: pinData.description) else {
+                reject("" as! Error)
+                return
+            }
             fullfill(mediaItems)
         }
     }

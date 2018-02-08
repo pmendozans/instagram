@@ -14,8 +14,9 @@ class ParametersManager {
     func getPinParameters(fields: [String]) -> Promise<[String: Any]>{
         return Promise { fullfill, _ in
             var fieldsString = ""
-            for field in fields {
-                fieldsString += "\(field) "
+            for (index, field) in fields.enumerated() {
+                let trailingComma = (index == fields.count - 1) ? "" : ","
+                fieldsString += "\(field)\(trailingComma)"
             }
             let params = [
                 "access_token": Defaults[.apiToken],

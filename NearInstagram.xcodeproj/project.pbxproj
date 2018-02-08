@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F87F9DDC2AD9AC5B7B82D25 /* Pods_NearInstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9CE3D44CA6E4528F81D131A /* Pods_NearInstagramUITests.framework */; };
 		142F9724D04AFB46DE8F48F3 /* Pods_NearInstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F7EE1976AD59AA0054F6A55 /* Pods_NearInstagramTests.framework */; };
+		6E4236A2202C638600CE8D45 /* PinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4236A1202C638600CE8D45 /* PinTableViewCell.swift */; };
+		6E4236A4202C6AC400CE8D45 /* PinTableViewCell+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4236A3202C6AC400CE8D45 /* PinTableViewCell+UI.swift */; };
 		7214A84220251786004360FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84120251786004360FD /* User.swift */; };
 		7214A84420251C7E004360FD /* UserCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84320251C7E004360FD /* UserCounts.swift */; };
 		7214A84620252235004360FD /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84520252235004360FD /* Media.swift */; };
@@ -16,14 +18,11 @@
 		7214A85220253489004360FD /* BoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A85120253489004360FD /* BoardRouter.swift */; };
 		7214A85F202A54EB004360FD /* PhotosTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A85E202A54EB004360FD /* PhotosTabBarController.swift */; };
 		7214A861202A55EC004360FD /* TagPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A860202A55EC004360FD /* TagPhotosViewController.swift */; };
-		7214A865202A610C004360FD /* LoginViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A864202A610C004360FD /* LoginViewController+Constraints.swift */; };
 		7214A867202A611B004360FD /* LoginViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A866202A611B004360FD /* LoginViewController+UI.swift */; };
-		7214A869202A6981004360FD /* TagPhotosViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A868202A6981004360FD /* TagPhotosViewController+Constraints.swift */; };
 		7214A86B202A698D004360FD /* TagPhotosViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86A202A698D004360FD /* TagPhotosViewController+UI.swift */; };
 		7214A86D202A6DBC004360FD /* BoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86C202A6DBC004360FD /* BoardManager.swift */; };
 		7214A86F202A6F58004360FD /* BoardDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86E202A6F58004360FD /* BoardDecoder.swift */; };
 		724AB065202B6A580000C431 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724AB064202B6A580000C431 /* LoginViewModel.swift */; };
-		724AB06A202B71AC0000C431 /* LoginViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724AB069202B71AC0000C431 /* LoginViewController+Style.swift */; };
 		724AB06B202B72560000C431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 724AB06D202B72560000C431 /* Localizable.strings */; };
 		724AB070202B80240000C431 /* PinterestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724AB06F202B80240000C431 /* PinterestManager.swift */; };
 		724AB072202BAEE50000C431 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724AB071202BAEE50000C431 /* Pin.swift */; };
@@ -60,6 +59,8 @@
 /* Begin PBXFileReference section */
 		0375687B5AA1B0C7C0B35158 /* Pods-NearInstagramUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearInstagramUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NearInstagramUITests/Pods-NearInstagramUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DAD771299999D186E05AE33 /* Pods_NearInstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearInstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E4236A1202C638600CE8D45 /* PinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinTableViewCell.swift; sourceTree = "<group>"; };
+		6E4236A3202C6AC400CE8D45 /* PinTableViewCell+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PinTableViewCell+UI.swift"; sourceTree = "<group>"; };
 		6EF16E36202B084700E506FC /* Instagram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instagram-Bridging-Header.h"; sourceTree = "<group>"; };
 		7214A84120251786004360FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7214A84320251C7E004360FD /* UserCounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCounts.swift; sourceTree = "<group>"; };
@@ -68,14 +69,11 @@
 		7214A85120253489004360FD /* BoardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRouter.swift; sourceTree = "<group>"; };
 		7214A85E202A54EB004360FD /* PhotosTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTabBarController.swift; sourceTree = "<group>"; };
 		7214A860202A55EC004360FD /* TagPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPhotosViewController.swift; sourceTree = "<group>"; };
-		7214A864202A610C004360FD /* LoginViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Constraints.swift"; sourceTree = "<group>"; };
 		7214A866202A611B004360FD /* LoginViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+UI.swift"; sourceTree = "<group>"; };
-		7214A868202A6981004360FD /* TagPhotosViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagPhotosViewController+Constraints.swift"; sourceTree = "<group>"; };
 		7214A86A202A698D004360FD /* TagPhotosViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagPhotosViewController+UI.swift"; sourceTree = "<group>"; };
 		7214A86C202A6DBC004360FD /* BoardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardManager.swift; sourceTree = "<group>"; };
 		7214A86E202A6F58004360FD /* BoardDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDecoder.swift; sourceTree = "<group>"; };
 		724AB064202B6A580000C431 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		724AB069202B71AC0000C431 /* LoginViewController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Style.swift"; sourceTree = "<group>"; };
 		724AB06C202B72560000C431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		724AB06E202B72890000C431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		724AB06F202B80240000C431 /* PinterestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestManager.swift; sourceTree = "<group>"; };
@@ -143,11 +141,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6E4236A0202C636300CE8D45 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6E4236A1202C638600CE8D45 /* PinTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		7214A859202A2505004360FD /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				7214A868202A6981004360FD /* TagPhotosViewController+Constraints.swift */,
 				7214A86A202A698D004360FD /* TagPhotosViewController+UI.swift */,
+				6E4236A3202C6AC400CE8D45 /* PinTableViewCell+UI.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -156,8 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				7214A866202A611B004360FD /* LoginViewController+UI.swift */,
-				7214A864202A610C004360FD /* LoginViewController+Constraints.swift */,
-				724AB069202B71AC0000C431 /* LoginViewController+Style.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -249,6 +253,7 @@
 		7287A82F2022786E008C6938 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6E4236A0202C636300CE8D45 /* Cells */,
 				7214A85D202A54C8004360FD /* Photos */,
 				7287A83720227B07008C6938 /* Login */,
 			);
@@ -519,6 +524,7 @@
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -531,6 +537,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +654,7 @@
 				7214A861202A55EC004360FD /* TagPhotosViewController.swift in Sources */,
 				724AB072202BAEE50000C431 /* Pin.swift in Sources */,
 				7214A86B202A698D004360FD /* TagPhotosViewController+UI.swift in Sources */,
+				6E4236A2202C638600CE8D45 /* PinTableViewCell.swift in Sources */,
 				724AB070202B80240000C431 /* PinterestManager.swift in Sources */,
 				7214A86F202A6F58004360FD /* BoardDecoder.swift in Sources */,
 				7214A84420251C7E004360FD /* UserCounts.swift in Sources */,
@@ -660,13 +668,11 @@
 				7214A867202A611B004360FD /* LoginViewController+UI.swift in Sources */,
 				7214A85F202A54EB004360FD /* PhotosTabBarController.swift in Sources */,
 				7287A83620227933008C6938 /* ApiManager.swift in Sources */,
-				724AB06A202B71AC0000C431 /* LoginViewController+Style.swift in Sources */,
+				6E4236A4202C6AC400CE8D45 /* PinTableViewCell+UI.swift in Sources */,
 				724AB076202BCB9C0000C431 /* ParametersManager.swift in Sources */,
 				7214A84E20253110004360FD /* MediaReource.swift in Sources */,
 				7214A84620252235004360FD /* Media.swift in Sources */,
-				7214A865202A610C004360FD /* LoginViewController+Constraints.swift in Sources */,
 				7287A802202276B7008C6938 /* AppDelegate.swift in Sources */,
-				7214A869202A6981004360FD /* TagPhotosViewController+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

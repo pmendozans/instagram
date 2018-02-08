@@ -8,10 +8,24 @@
 
 import Foundation
 import UIKit
+import PureLayout
 
 extension TagPhotosViewController {
-    func loadUIViews() {
+    
+    func setupSubviews() {
+        addTable()
+        addConstraintsToTable()
+    }
+    
+    func addTable() {
         tableView = UITableView()
         view.addSubview(tableView)
+    }
+    
+    func addConstraintsToTable() {
+        tableView.autoMatch(.height, to: .height, of: view)
+        tableView.autoMatch(.width, to: .width, of: view)
+        tableView.autoPinEdge(toSuperviewEdge: .leading, withInset: 0)
+        tableView.autoPinEdge(toSuperviewEdge: .top, withInset: 0)
     }
 }

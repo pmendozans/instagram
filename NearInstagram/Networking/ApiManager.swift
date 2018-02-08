@@ -12,8 +12,8 @@ import PromiseKit
 
 struct ApiManager {
     static let baseUrl = "https://api.pinterest.com"
-    
-    func genericRequest(request: URLRequest) -> Promise<[String: Any]>{
+
+    func genericRequest(request: URLRequestConvertible) -> Promise<[String: Any]>{
         return Promise { fullfill, reject in
             Alamofire.request(request).responseJSON { response in
                 switch response.result {

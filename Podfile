@@ -9,6 +9,7 @@ target 'NearInstagram' do
   pod 'LKAlertController'
   pod 'PureLayout'
   pod 'PinterestSDK', :git => 'https://github.com/pinterest/ios-pdk.git'
+  pod 'SwiftyJSON'
   # Pods for NearInstagram
 
   target 'NearInstagramTests' do

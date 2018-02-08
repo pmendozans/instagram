@@ -13,19 +13,21 @@ class TagPhotosViewController: UIViewController {
 
     var tagName: String!
     var tableView: UITableView!
-    var mediaItems: [Media] = []
+    var pinList: [Pin] = []
     var boardManager = BoardManager()
+    let cellIdentifier = "PinTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadUIViews()
+        setupSubviews()
         setupTableView()
         loadMediaFromAPI()
     }
+
     
     func loadMediaFromAPI() {
-        boardManager.getImages(byBoard: "iphone").then { mediaItems -> Void in
-            self.mediaItems = mediaItems
+        boardManager.getImages(byBoard: "iphone").then { pinItems -> Void in
+            self.pinList = pinItems
             self.tableView.reloadData()
         }.catch { error in
             print(error.localizedDescription)
@@ -35,16 +37,21 @@ class TagPhotosViewController: UIViewController {
     func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        tableView.register(PinTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
     }
 }
 
 extension TagPhotosViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mediaItems.count
+        return pinList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PinTableViewCell
+        let pin = pinList[indexPath.row]
+        cell.setupSubViews()
         return cell
     }
 }

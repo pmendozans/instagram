@@ -12,13 +12,14 @@ import SwiftyUserDefaults
 import PromiseKit
 
 enum BoardRouter {
-    static let apiUrlString = "v1/boards/%@/pins"
+    static let apiUrlString = "v1/boards/%@/pins/"
     case get(String, [String: Any])
     
 }
 
 extension BoardRouter: URLRequestConvertible {
-    func asURLRequest() throws -> Promise<URLRequest> {
+    
+    func asURLRequest() throws -> URLRequest {
         var method: HTTPMethod {
             switch self {
             case .get:
@@ -36,7 +37,7 @@ extension BoardRouter: URLRequestConvertible {
         let url: URL = {
             let ralativePath: String?
             switch self {
-            case .get(let board):
+            case .get(let board,_):
                 ralativePath = String(format: BoardRouter.apiUrlString, board)
             }
             var url = URL(string: ApiManager.baseUrl)!
@@ -57,9 +58,7 @@ extension BoardRouter: URLRequestConvertible {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
-        return Promise { fullfill, reject in
-            fullfill(try encoding.encode(urlRequest, with: params))
-        }
-        
+        return try encoding.encode(urlRequest, with: params)
+    
     }
 }

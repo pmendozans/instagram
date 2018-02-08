@@ -16,9 +16,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
-        styleViews()
-        addConstraintsToViews()
+        setupSubviews()
     }
     
     @objc func tapLoginButton(sender: Any) {

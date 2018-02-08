@@ -14,31 +14,20 @@ class BoardManager {
     let boardDecoder = BoardDecoder()
     let parametersManager = ParametersManager()
     
-    func getImages(byBoard board: String) -> Promise<[Media]> {
-        /*return Promise { fulfill, reject in
-            guard let request = BoardRouter.get("iphone").urlRequest else {
-                let error = NSError(domain: "ServerErrorIn200", code: 0,
-                                    userInfo: [NSLocalizedDescriptionKey: "Server Error In 200"])
-                return reject(error)
-            }
-            apiManager.genericRequest(request: request).then { json in
-                self.boardDecoder.decodeMedia(jsonDictionary: json)
-                }.then { mediaItems in
-                    fulfill(mediaItems)
-                }.catch { error in
-                    print(error.localizedDescription)
-                    return reject(error)
-                }
-        }*/
+    func getImages(byBoard board: String) -> Promise<[Pin]> {
         let fieldsToRequest = ["note", "image", "created_at"]
         return Promise { fullfill, reject in
-            parametersManager.getPinParameters(fields: fieldsToRequest).then { params in
-                guard let request = BoardRouter.get("iphone").urlRequest else {
-                    
-                    return reject(error)
-                }
+            parametersManager.getPinParameters(fields: fieldsToRequest).then { params -> BoardRouter in
+                return BoardRouter.get("685532443217810716", params)
+            }.then { router in
+                self.apiManager.genericRequest(request: router)
+            }.then { responseJson in
+                self.boardDecoder.decodeMedia(jsonDictionary: responseJson)
+            }.then{ photoList in
+                fullfill(photoList)
+            }.catch { error in
+                reject(error)
             }
-            
         }
     }
 }
