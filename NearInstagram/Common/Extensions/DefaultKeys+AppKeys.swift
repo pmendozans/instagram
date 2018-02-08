@@ -10,5 +10,5 @@ import Foundation
 import SwiftyUserDefaults
 
 extension DefaultsKeys {
-    static let instagramToken = DefaultsKey<String>("instagramToken")
+    static let apiToken = DefaultsKey<String>("apiToken")
 }

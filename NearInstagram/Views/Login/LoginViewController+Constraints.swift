@@ -12,6 +12,12 @@ import PureLayout
 
 extension LoginViewController {
     func addConstraintsToViews() {
-
+        addloginButtonConstraints()
+    }
+    
+    func addloginButtonConstraints(){
+        loginButton.autoCenterInSuperview()
+        loginButton.autoPinEdge(toSuperviewEdge: .trailing, withInset: 20)
+        loginButton.autoPinEdge(toSuperviewEdge: .leading, withInset: 20)
     }
 }

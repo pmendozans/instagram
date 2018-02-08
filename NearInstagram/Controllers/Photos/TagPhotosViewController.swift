@@ -14,7 +14,7 @@ class TagPhotosViewController: UIViewController {
     var tagName: String!
     var tableView: UITableView!
     var mediaItems: [Media] = []
-    var tagsManager = TagsManager()
+    var boardManager = BoardManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class TagPhotosViewController: UIViewController {
     }
     
     func loadMediaFromAPI() {
-        tagsManager.getImages(byTag: "iphone").then { mediaItems -> Void in
+        boardManager.getImages(byBoard: "iphone").then { mediaItems -> Void in
             self.mediaItems = mediaItems
             self.tableView.reloadData()
         }.catch { error in

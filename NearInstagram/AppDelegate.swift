@@ -21,9 +21,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return PDKClient.sharedInstance().handleCallbackURL(url)
+    }
+    
+    func application(_ application: UIApplication, handleOpen url: URL) -> Bool {
+        return PDKClient.sharedInstance().handleCallbackURL(url)
+    }
+    
     func loadMainView() {
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        window?.backgroundColor = UIColor.black
+        window?.backgroundColor = UIColor.white
         let loginController = LoginViewController()
         self.window?.rootViewController = loginController
         self.window?.makeKeyAndVisible()

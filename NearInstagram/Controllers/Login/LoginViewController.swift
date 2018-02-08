@@ -7,28 +7,26 @@
 //
 
 import UIKit
-import WebKit
-import SwiftyUserDefaults
-import PinterestSDK
+import PromiseKit
 
 class LoginViewController: UIViewController {
     
-    var loginButton: WKWebView!
+    var loginButton: UIButton!
+    let pinterestManager = PinterestManager()
     
-    private let instagramLoginManager = InstagramLoginManager()
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        loginWithPinterest()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addSubviews()
+        styleViews()
+        addConstraintsToViews()
     }
     
-    func loginWithPinterest() {
-        print("LOLS")
-        PDKClient.sharedInstance().authenticate(withPermissions: [""], from: self, withSuccess: {_ in
-            
-        }, andFailure: {_ in
-            
-        })
+    @objc func tapLoginButton(sender: Any) {
+        pinterestManager.login(viewController: self).then { token in
+            self.navigateToPhotos()
+        }.catch { error in
+            print(error.localizedDescription)
+        }
     }
     
     func navigateToPhotos() {

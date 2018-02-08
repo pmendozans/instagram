@@ -10,7 +10,7 @@ import Foundation
 import PromiseKit
 import ObjectMapper
 
-class TagsDecoder {
+class BoardDecoder {
     func decodeMedia(jsonDictionary: [String: Any]) -> Promise<[Media]> {
         let mediaItems = Mapper<Media>().mapArray(JSONArray: [jsonDictionary])
         return Promise { fullfill, reject in

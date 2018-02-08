@@ -11,7 +11,7 @@ import Alamofire
 import PromiseKit
 
 struct ApiManager {
-    static let baseUrl = "https://api.instagram.com/v1"
+    static let baseUrl = "https://api.pinterest.com"
     
     func genericRequest(request: URLRequest) -> Promise<[String: Any]>{
         return Promise { fullfill, reject in

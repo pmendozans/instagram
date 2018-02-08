@@ -9,14 +9,16 @@
 import Foundation
 import Alamofire
 import SwiftyUserDefaults
+import PromiseKit
 
-enum TagsRouter {
-    static let apiUrlString = "tags/%@/media/recent"
-    case get(String)
+enum BoardRouter {
+    static let apiUrlString = "v1/boards/%@/pins"
+    case get(String, [String: Any])
+    
 }
 
-extension TagsRouter: URLRequestConvertible {
-    func asURLRequest() throws -> URLRequest {
+extension BoardRouter: URLRequestConvertible {
+    func asURLRequest() throws -> Promise<URLRequest> {
         var method: HTTPMethod {
             switch self {
             case .get:
@@ -26,16 +28,16 @@ extension TagsRouter: URLRequestConvertible {
         
         let params: ([String: Any]?) = {
             switch self {
-            case .get:
-                return ["access_token": Defaults[.instagramToken], "COUNT": 100]
+            case .get(_, let params):
+                return params
             }
         }()
         
         let url: URL = {
             let ralativePath: String?
             switch self {
-            case .get(let tag):
-                ralativePath = String(format: TagsRouter.apiUrlString, tag)
+            case .get(let board):
+                ralativePath = String(format: BoardRouter.apiUrlString, board)
             }
             var url = URL(string: ApiManager.baseUrl)!
             if let relativePath = ralativePath {
@@ -55,7 +57,9 @@ extension TagsRouter: URLRequestConvertible {
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
-
-        return try encoding.encode(urlRequest, with: params)
+        return Promise { fullfill, reject in
+            fullfill(try encoding.encode(urlRequest, with: params))
+        }
+        
     }
 }

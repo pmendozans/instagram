@@ -13,16 +13,21 @@
 		7214A84420251C7E004360FD /* UserCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84320251C7E004360FD /* UserCounts.swift */; };
 		7214A84620252235004360FD /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84520252235004360FD /* Media.swift */; };
 		7214A84E20253110004360FD /* MediaReource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84D20253110004360FD /* MediaReource.swift */; };
-		7214A85220253489004360FD /* TagsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A85120253489004360FD /* TagsRouter.swift */; };
-		7214A858202A21C5004360FD /* TagPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A857202A21C5004360FD /* TagPhotosView.swift */; };
+		7214A85220253489004360FD /* BoardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A85120253489004360FD /* BoardRouter.swift */; };
 		7214A85F202A54EB004360FD /* PhotosTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A85E202A54EB004360FD /* PhotosTabBarController.swift */; };
 		7214A861202A55EC004360FD /* TagPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A860202A55EC004360FD /* TagPhotosViewController.swift */; };
 		7214A865202A610C004360FD /* LoginViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A864202A610C004360FD /* LoginViewController+Constraints.swift */; };
 		7214A867202A611B004360FD /* LoginViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A866202A611B004360FD /* LoginViewController+UI.swift */; };
 		7214A869202A6981004360FD /* TagPhotosViewController+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A868202A6981004360FD /* TagPhotosViewController+Constraints.swift */; };
 		7214A86B202A698D004360FD /* TagPhotosViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86A202A698D004360FD /* TagPhotosViewController+UI.swift */; };
-		7214A86D202A6DBC004360FD /* TagsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86C202A6DBC004360FD /* TagsManager.swift */; };
-		7214A86F202A6F58004360FD /* TagsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86E202A6F58004360FD /* TagsDecoder.swift */; };
+		7214A86D202A6DBC004360FD /* BoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86C202A6DBC004360FD /* BoardManager.swift */; };
+		7214A86F202A6F58004360FD /* BoardDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A86E202A6F58004360FD /* BoardDecoder.swift */; };
+		724AB065202B6A580000C431 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724AB064202B6A580000C431 /* LoginViewModel.swift */; };
+		724AB06A202B71AC0000C431 /* LoginViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724AB069202B71AC0000C431 /* LoginViewController+Style.swift */; };
+		724AB06B202B72560000C431 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 724AB06D202B72560000C431 /* Localizable.strings */; };
+		724AB070202B80240000C431 /* PinterestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724AB06F202B80240000C431 /* PinterestManager.swift */; };
+		724AB072202BAEE50000C431 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724AB071202BAEE50000C431 /* Pin.swift */; };
+		724AB076202BCB9C0000C431 /* ParametersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724AB075202BCB9C0000C431 /* ParametersManager.swift */; };
 		7287A802202276B7008C6938 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7287A801202276B7008C6938 /* AppDelegate.swift */; };
 		7287A809202276B7008C6938 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7287A808202276B7008C6938 /* Assets.xcassets */; };
 		7287A80C202276B7008C6938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7287A80A202276B7008C6938 /* LaunchScreen.storyboard */; };
@@ -60,16 +65,22 @@
 		7214A84320251C7E004360FD /* UserCounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCounts.swift; sourceTree = "<group>"; };
 		7214A84520252235004360FD /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		7214A84D20253110004360FD /* MediaReource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaReource.swift; sourceTree = "<group>"; };
-		7214A85120253489004360FD /* TagsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsRouter.swift; sourceTree = "<group>"; };
-		7214A857202A21C5004360FD /* TagPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPhotosView.swift; sourceTree = "<group>"; };
+		7214A85120253489004360FD /* BoardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardRouter.swift; sourceTree = "<group>"; };
 		7214A85E202A54EB004360FD /* PhotosTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTabBarController.swift; sourceTree = "<group>"; };
 		7214A860202A55EC004360FD /* TagPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPhotosViewController.swift; sourceTree = "<group>"; };
 		7214A864202A610C004360FD /* LoginViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Constraints.swift"; sourceTree = "<group>"; };
 		7214A866202A611B004360FD /* LoginViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+UI.swift"; sourceTree = "<group>"; };
 		7214A868202A6981004360FD /* TagPhotosViewController+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagPhotosViewController+Constraints.swift"; sourceTree = "<group>"; };
 		7214A86A202A698D004360FD /* TagPhotosViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagPhotosViewController+UI.swift"; sourceTree = "<group>"; };
-		7214A86C202A6DBC004360FD /* TagsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsManager.swift; sourceTree = "<group>"; };
-		7214A86E202A6F58004360FD /* TagsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsDecoder.swift; sourceTree = "<group>"; };
+		7214A86C202A6DBC004360FD /* BoardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardManager.swift; sourceTree = "<group>"; };
+		7214A86E202A6F58004360FD /* BoardDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardDecoder.swift; sourceTree = "<group>"; };
+		724AB064202B6A580000C431 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		724AB069202B71AC0000C431 /* LoginViewController+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Style.swift"; sourceTree = "<group>"; };
+		724AB06C202B72560000C431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		724AB06E202B72890000C431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		724AB06F202B80240000C431 /* PinterestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestManager.swift; sourceTree = "<group>"; };
+		724AB071202BAEE50000C431 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		724AB075202BCB9C0000C431 /* ParametersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersManager.swift; sourceTree = "<group>"; };
 		7287A7FE202276B7008C6938 /* NearInstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearInstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7287A801202276B7008C6938 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7287A808202276B7008C6938 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -135,7 +146,8 @@
 		7214A859202A2505004360FD /* Photos */ = {
 			isa = PBXGroup;
 			children = (
-				7214A857202A21C5004360FD /* TagPhotosView.swift */,
+				7214A868202A6981004360FD /* TagPhotosViewController+Constraints.swift */,
+				7214A86A202A698D004360FD /* TagPhotosViewController+UI.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -143,6 +155,9 @@
 		7214A85A202A2A2D004360FD /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				7214A866202A611B004360FD /* LoginViewController+UI.swift */,
+				7214A864202A610C004360FD /* LoginViewController+Constraints.swift */,
+				724AB069202B71AC0000C431 /* LoginViewController+Style.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -154,6 +169,23 @@
 				7214A860202A55EC004360FD /* TagPhotosViewController.swift */,
 			);
 			path = Photos;
+			sourceTree = "<group>";
+		};
+		724AB063202B6A320000C431 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				724AB064202B6A580000C431 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		724AB066202B6D5C0000C431 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7287A808202276B7008C6938 /* Assets.xcassets */,
+				724AB06D202B72560000C431 /* Localizable.strings */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7287A7F5202276B7008C6938 = {
@@ -181,6 +213,7 @@
 		7287A800202276B7008C6938 /* NearInstagram */ = {
 			isa = PBXGroup;
 			children = (
+				724AB066202B6D5C0000C431 /* Resources */,
 				7287A834202278A0008C6938 /* ViewModels */,
 				7287A83320227899008C6938 /* Networking */,
 				7287A83220227893008C6938 /* Common */,
@@ -188,7 +221,6 @@
 				7287A83020227885008C6938 /* Models */,
 				7287A82F2022786E008C6938 /* Controllers */,
 				7287A801202276B7008C6938 /* AppDelegate.swift */,
-				7287A808202276B7008C6938 /* Assets.xcassets */,
 				7287A80A202276B7008C6938 /* LaunchScreen.storyboard */,
 				7287A80D202276B7008C6938 /* Info.plist */,
 				6EF16E36202B084700E506FC /* Instagram-Bridging-Header.h */,
@@ -230,6 +262,7 @@
 				7214A84320251C7E004360FD /* UserCounts.swift */,
 				7214A84520252235004360FD /* Media.swift */,
 				7214A84D20253110004360FD /* MediaReource.swift */,
+				724AB071202BAEE50000C431 /* Pin.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -248,6 +281,7 @@
 			children = (
 				7287A83C20229859008C6938 /* Extensions */,
 				7287A83A20227DF6008C6938 /* InstagramLoginManager.swift */,
+				724AB06F202B80240000C431 /* PinterestManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -256,9 +290,10 @@
 			isa = PBXGroup;
 			children = (
 				7287A83520227933008C6938 /* ApiManager.swift */,
-				7214A85120253489004360FD /* TagsRouter.swift */,
-				7214A86C202A6DBC004360FD /* TagsManager.swift */,
-				7214A86E202A6F58004360FD /* TagsDecoder.swift */,
+				7214A85120253489004360FD /* BoardRouter.swift */,
+				7214A86C202A6DBC004360FD /* BoardManager.swift */,
+				7214A86E202A6F58004360FD /* BoardDecoder.swift */,
+				724AB075202BCB9C0000C431 /* ParametersManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -266,6 +301,7 @@
 		7287A834202278A0008C6938 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				724AB063202B6A320000C431 /* Login */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -282,10 +318,6 @@
 			isa = PBXGroup;
 			children = (
 				7287A83D20229897008C6938 /* DefaultKeys+AppKeys.swift */,
-				7214A864202A610C004360FD /* LoginViewController+Constraints.swift */,
-				7214A866202A611B004360FD /* LoginViewController+UI.swift */,
-				7214A868202A6981004360FD /* TagPhotosViewController+Constraints.swift */,
-				7214A86A202A698D004360FD /* TagPhotosViewController+UI.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -420,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7287A80C202276B7008C6938 /* LaunchScreen.storyboard in Resources */,
+				724AB06B202B72560000C431 /* Localizable.strings in Resources */,
 				7287A809202276B7008C6938 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,23 +645,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				7214A861202A55EC004360FD /* TagPhotosViewController.swift in Sources */,
+				724AB072202BAEE50000C431 /* Pin.swift in Sources */,
 				7214A86B202A698D004360FD /* TagPhotosViewController+UI.swift in Sources */,
-				7214A86F202A6F58004360FD /* TagsDecoder.swift in Sources */,
+				724AB070202B80240000C431 /* PinterestManager.swift in Sources */,
+				7214A86F202A6F58004360FD /* BoardDecoder.swift in Sources */,
 				7214A84420251C7E004360FD /* UserCounts.swift in Sources */,
 				7287A83B20227DF6008C6938 /* InstagramLoginManager.swift in Sources */,
-				7214A86D202A6DBC004360FD /* TagsManager.swift in Sources */,
+				7214A86D202A6DBC004360FD /* BoardManager.swift in Sources */,
 				7287A83920227B42008C6938 /* LoginViewController.swift in Sources */,
-				7214A85220253489004360FD /* TagsRouter.swift in Sources */,
+				7214A85220253489004360FD /* BoardRouter.swift in Sources */,
+				724AB065202B6A580000C431 /* LoginViewModel.swift in Sources */,
 				7214A84220251786004360FD /* User.swift in Sources */,
 				7287A83E20229897008C6938 /* DefaultKeys+AppKeys.swift in Sources */,
 				7214A867202A611B004360FD /* LoginViewController+UI.swift in Sources */,
 				7214A85F202A54EB004360FD /* PhotosTabBarController.swift in Sources */,
 				7287A83620227933008C6938 /* ApiManager.swift in Sources */,
+				724AB06A202B71AC0000C431 /* LoginViewController+Style.swift in Sources */,
+				724AB076202BCB9C0000C431 /* ParametersManager.swift in Sources */,
 				7214A84E20253110004360FD /* MediaReource.swift in Sources */,
 				7214A84620252235004360FD /* Media.swift in Sources */,
 				7214A865202A610C004360FD /* LoginViewController+Constraints.swift in Sources */,
 				7287A802202276B7008C6938 /* AppDelegate.swift in Sources */,
-				7214A858202A21C5004360FD /* TagPhotosView.swift in Sources */,
 				7214A869202A6981004360FD /* TagPhotosViewController+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -665,6 +702,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		724AB06D202B72560000C431 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				724AB06C202B72560000C431 /* en */,
+				724AB06E202B72890000C431 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7287A80A202276B7008C6938 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
