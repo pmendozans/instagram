@@ -16,7 +16,8 @@ class PhotosGridViewController: UIViewController {
     var pinList: [Pin] = []
     var boardManager = BoardManager()
     let cellIdentifier = "PinTableViewCell"
-    var indexToShowImage = 0
+    var imageForModal: UIImage!
+    var boardId: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,11 @@ class PhotosGridViewController: UIViewController {
     }
 
     func loadMediaFromAPI() {
-        boardManager.getImages(byBoard: "iphone").then { pinItems -> Void in
+        boardManager.getImages(byBoard: boardId).then { pinItems -> Void in
             self.pinList = pinItems
             self.collectionView.reloadData()
-            }.catch { error in
-                print(error.localizedDescription)
+        }.catch { error in
+            print(error.localizedDescription)
         }
     }
     
@@ -40,46 +41,40 @@ class PhotosGridViewController: UIViewController {
         collectionView.register(PinCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
     
-    func addLongPressGesture(_ cell: UICollectionViewCell) {
-        if self.traitCollection.forceTouchCapability == .available {
-            //print("forceTouchCapability")
-        } else {
-            //print("NO forceTouchCapability")
-        }
+    func addGestures(_ cell: PinCollectionViewCell) {
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressOnCell(sender:)))
-        longPressGesture.minimumPressDuration = 2.0
         longPressGesture.allowableMovement = 5
-        
+        var pressDuration = 0.5
+        if self.traitCollection.forceTouchCapability == .available {
+            pressDuration = 0.5
+        }
+        longPressGesture.minimumPressDuration = pressDuration
         cell.addGestureRecognizer(longPressGesture)
     }
     
     @objc func longPressOnCell(sender: UILongPressGestureRecognizer) {
-        //let touch = UITouch()
-        //print(touch.force)
+        let pointTouched = sender.location(in: collectionView)
+        let indexPath = collectionView.indexPathForItem(at: pointTouched)?.row
         if sender.state == .began {
-            openImageModal()
+            openImageModal(pinIndex: indexPath!)
         }
         else if sender.state == .ended {
             closeModalImage()
         }
-        print(sender.state.rawValue)
     }
     
-    func openImageModal() {
-        let pinToOpen = pinList[indexToShowImage]
-        modalImage = UIImageView()
-        //TODO: GUARD
-        //modalImage.kf.setImage(with: pinToOpen.imageUrl)
-        modalImage.image = #imageLiteral(resourceName: "pinterest")
-        view.addSubview(modalImage)
-        modalImage.autoMatch(.height, to: .height, of: view)
-        modalImage.autoMatch(.width, to: .width, of: view)
-        modalImage.autoPinEdge(toSuperviewEdge: .leading, withInset: 0)
-        modalImage.autoPinEdge(toSuperviewEdge: .top, withInset: 0)
+    func getIndexFromActiveCell(_ sender: PinCollectionViewCell) {
+        imageForModal = sender.pinImage.image
+    }
+    
+    func openImageModal(pinIndex: Int) {
+        if let imageUrl = pinList[pinIndex].imageUrl {
+            modalImage.kf.setImage(with: imageUrl)
+        }
+        modalImage.isHidden = false
     }
     
     func closeModalImage() {
-
         modalImage.isHidden = true
     }
 }
@@ -94,7 +89,7 @@ extension PhotosGridViewController: UICollectionViewDataSource {
         let pin = pinList[indexPath.row]
         cell.setupSubViews()
         cell.loadPinData(pin: pin)
-        addLongPressGesture(cell)
+        addGestures(cell)
         return cell
     }
 }
@@ -107,6 +102,9 @@ extension PhotosGridViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        indexToShowImage = indexPath.row
+        let pinSelected = pinList[indexPath.row]
+        let detailsViewController = PhotoDetailsViewController()
+        detailsViewController.pinId = pinSelected.id
+        navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }

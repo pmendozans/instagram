@@ -14,6 +14,7 @@ struct Pin: Mappable {
     var imageUrl: URL?
     var media: String = ""
     var createdAt: Date?
+    var id: String = ""
     
     init?(map: Map) {
         
@@ -21,8 +22,9 @@ struct Pin: Mappable {
     
     mutating func mapping(map: Map) {
         note <- map["note"]
+        id <- map["id"]
         imageUrl <- (map["image.original.url"], URLTransform())
         media <- map["media.type"]
-        createdAt <- (map[""], DateTransform())
+        createdAt <- (map["created_at"], DateTransform())
     }
 }

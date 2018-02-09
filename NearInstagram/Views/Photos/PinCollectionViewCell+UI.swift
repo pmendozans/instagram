@@ -12,6 +12,7 @@ import UIKit
 extension PinCollectionViewCell {
     func setupSubViews(){
         addPinImage()
+        styleImage()
         addConstraintsToImage()
     }
     
@@ -19,6 +20,12 @@ extension PinCollectionViewCell {
         pinImage = UIImageView(image: #imageLiteral(resourceName: "pinterest"))
         pinImage.contentMode = .scaleAspectFit
         addSubview(pinImage)
+    }
+    
+    func styleImage(){
+        pinImage.layer.cornerRadius = 5
+        pinImage.clipsToBounds = true
+        pinImage.backgroundColor = Colors.darkTransparent
     }
     
     func addConstraintsToImage() {

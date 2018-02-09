@@ -16,15 +16,15 @@ extension ProfileMenuViewController {
     }
     
     func setBarTitle() {
-        navigationController?.navigationBar.barStyle = UIBarStyle.black
-        navigationController?.navigationBar.tintColor = UIColor.white
+        //navigationController?.navigationBar.barStyle = UIBarStyle.black
+        navigationController?.navigationBar.tintColor = Colors.pinterestRed
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.topItem?.title = "PROFILE"
     }
     
     func addNavigationCloseButton() {
         let profileBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "close-button"), style: .plain, target: self, action: #selector(self.closeProfile(sender:)))
-        profileBarButton.tintColor = UIColor.white
+        profileBarButton.tintColor = Colors.pinterestRed
         navigationItem.setRightBarButton(profileBarButton, animated: false)
     }
 }

@@ -11,18 +11,23 @@ import UIKit
 
 extension PinTableViewCell {
     func setupSubViews(){
+        setupCell()
         addPinImage()
+        stylePinImage()
         addPinDescription()
         addConstraintsToImage()
         addConstraintsToDescription()
-        setupCell()
     }
     
     func addPinImage() {
-        pinImage = UIImageView(image: #imageLiteral(resourceName: "pinterest"))
-        pinImage.contentMode = .scaleAspectFit
+        pinImage = UIImageView()
         addSubview(pinImage)
-        
+    }
+    
+    func stylePinImage() {
+        pinImage.clipsToBounds = true
+        pinImage.layer.cornerRadius = 5
+        pinImage.contentMode = .scaleAspectFill
     }
     
     func addPinDescription() {
@@ -33,6 +38,7 @@ extension PinTableViewCell {
     
     func addConstraintsToImage() {
         pinImage.autoPinEdge(toSuperviewEdge: .leading, withInset: 8)
+        pinImage.autoPinEdge(toSuperviewEdge: .bottom, withInset: 8)
         pinImage.autoPinEdge(toSuperviewEdge: .top, withInset: 8)
         pinImage.autoSetDimension(.height, toSize: 80)
         pinImage.autoSetDimension(.width, toSize: 80)
@@ -47,7 +53,7 @@ extension PinTableViewCell {
     }
     
     func setupCell() {
-        preservesSuperviewLayoutMargins = false
+        //preservesSuperviewLayoutMargins = false
         separatorInset = UIEdgeInsets.zero
         layoutMargins = UIEdgeInsets.zero
         selectionStyle = .none

@@ -15,10 +15,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let pinterestAppId = "4949323701479819048"
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+        [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         PDKClient.configureSharedInstance(withAppId: pinterestAppId)
         loadMainView()
+        styleNavBar()
         return true
+    }
+    
+    func styleNavBar() {
+        let navBarApearence = UINavigationBar.appearance()
+        navBarApearence.tintColor = Colors.pinterestRed
+        
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {

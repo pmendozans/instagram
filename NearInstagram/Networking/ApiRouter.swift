@@ -11,14 +11,12 @@ import Alamofire
 import SwiftyUserDefaults
 import PromiseKit
 
-enum BoardRouter {
-    static let apiUrlString = "v1/boards/%@/pins/"
-    case get(String, [String: Any])
-    
+enum ApiRouter {
+    case get(String, String, [String: Any])
 }
 
-extension BoardRouter: URLRequestConvertible {
-    
+extension ApiRouter: URLRequestConvertible {
+    static let baseURLString: String = "https://api.pinterest.com"
     func asURLRequest() throws -> URLRequest {
         var method: HTTPMethod {
             switch self {
@@ -29,7 +27,7 @@ extension BoardRouter: URLRequestConvertible {
         
         let params: ([String: Any]?) = {
             switch self {
-            case .get(_, let params):
+            case .get(_, _, let params):
                 return params
             }
         }()
@@ -37,12 +35,12 @@ extension BoardRouter: URLRequestConvertible {
         let url: URL = {
             let ralativePath: String?
             switch self {
-            case .get(let board,_):
-                ralativePath = String(format: BoardRouter.apiUrlString, board)
+            case .get(let endpoint, let board, _):
+                ralativePath = String(format: endpoint, board)
             }
-            var url = URL(string: ApiManager.baseUrl)!
+            var url = URL(string: ApiRouter.baseURLString)!
             if let relativePath = ralativePath {
-                url = url.appendingPathComponent(relativePath)
+                url = url.appendingPathComponent(ralativePath!)
             }
             return url
         }()
@@ -59,6 +57,5 @@ extension BoardRouter: URLRequestConvertible {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = method.rawValue
         return try encoding.encode(urlRequest, with: params)
-    
     }
 }

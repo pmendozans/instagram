@@ -10,15 +10,20 @@ import Foundation
 import PromiseKit
 
 class BoardManager {
-    let apiManager = ApiManager()
-    let boardDecoder = BoardDecoder()
-    let parametersManager = ParametersManager()
+    
+    private enum Endpoints: String {
+        case getPinsInBoard = "v1/boards/%@/pins/"
+    }
+    
+    private let apiManager = ApiManager()
+    private let boardDecoder = BoardDecoder()
+    private let parametersManager = ParametersManager()
     
     func getImages(byBoard board: String) -> Promise<[Pin]> {
-        let fieldsToRequest = ["note", "image", "created_at"]
+        let fieldsToRequest = ["note", "image", "created_at", "id"]
         return Promise { fullfill, reject in
-            parametersManager.getPinParameters(fields: fieldsToRequest).then { params -> BoardRouter in
-                return BoardRouter.get("685532443217810716", params)
+            parametersManager.getPinParameters(fields: fieldsToRequest).then { params -> ApiRouter in
+                return ApiRouter.get(Endpoints.getPinsInBoard.rawValue, board, params)
             }.then { router in
                 self.apiManager.genericRequest(request: router)
             }.then { responseJson in

@@ -21,7 +21,6 @@ class PinterestManager {
                     return
                 }
                 Defaults[.apiToken] = token
-                print(token)
                 fullfill(token)
             }, andFailure: { error in
                 reject(error!)

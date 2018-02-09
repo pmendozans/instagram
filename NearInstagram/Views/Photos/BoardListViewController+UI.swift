@@ -10,12 +10,11 @@ import Foundation
 import UIKit
 import PureLayout
 
-extension TagPhotosViewController {
+extension BoardListViewController {
     
     func setupSubviews() {
         addTable()
         addConstraintsToTable()
-        styleNavigationBar()
         addProfileButton()
     }
     
@@ -31,15 +30,9 @@ extension TagPhotosViewController {
         tableView.autoPinEdge(toSuperviewEdge: .top, withInset: 0)
     }
     
-    func styleNavigationBar() {
-        navigationController?.navigationBar.barStyle = UIBarStyle.black
-        navigationController?.navigationBar.tintColor = UIColor.white
-        navigationController?.navigationBar.isTranslucent = false
-    }
-    
     func addProfileButton() {
         let profileBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "user-icon"), style: .plain, target: self, action: #selector(self.navigateToProfile(sender:)))
-        profileBarButton.tintColor = UIColor.white
+        profileBarButton.tintColor = Colors.pinterestRed
         navigationItem.setRightBarButton(profileBarButton, animated: false)
     }
 }

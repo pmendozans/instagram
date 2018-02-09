@@ -12,6 +12,7 @@ import PromiseKit
 class LoginViewController: UIViewController {
     
     var loginButton: UIButton!
+    var topLogoImage: UIImageView!
     let pinterestManager = PinterestManager()
     
     override func viewDidLoad() {

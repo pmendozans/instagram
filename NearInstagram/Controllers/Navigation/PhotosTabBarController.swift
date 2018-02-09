@@ -11,7 +11,8 @@ import UIKit
 class PhotosTabBarController: UITabBarController {
     
     let tags = ["iPhone", "iPad", "Mac"]
-
+    let boards = ["685532443217810716", "685532443217817355", "685532443217817358"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadViewControllers()
@@ -20,9 +21,10 @@ class PhotosTabBarController: UITabBarController {
     
     func loadViewControllers() {
         var tabNavigationControllers: [UINavigationController] = []
-        for tag in tags {
-            let tagViewController = TagPhotosViewController()
+        for (index, tag) in tags.enumerated() {
+            let tagViewController = BoardListViewController()
             tagViewController.tagName = tag
+            tagViewController.boardId = boards[index]
             tagViewController.tabBarItem = UITabBarItem(title: tag, image: UIImage(named: tag.lowercased()), tag: 0)
             let navigationController = UINavigationController(rootViewController: tagViewController)
             tabNavigationControllers.append(navigationController)

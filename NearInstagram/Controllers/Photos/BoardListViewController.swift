@@ -9,13 +9,14 @@
 import UIKit
 import PromiseKit
 
-class TagPhotosViewController: UIViewController {
+class BoardListViewController: UIViewController {
 
     var tagName: String!
     var tableView: UITableView!
     var pinList: [Pin] = []
     var boardManager = BoardManager()
     let cellIdentifier = "PinTableViewCell"
+    var boardId: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +24,9 @@ class TagPhotosViewController: UIViewController {
         setupTableView()
         loadMediaFromAPI()
     }
-
+    
     func loadMediaFromAPI() {
-        boardManager.getImages(byBoard: "iphone").then { pinItems -> Void in
+        boardManager.getImages(byBoard: boardId).then { pinItems -> Void in
             self.pinList = pinItems
             self.tableView.reloadData()
         }.catch { error in
@@ -48,7 +49,7 @@ class TagPhotosViewController: UIViewController {
     }
 }
 
-extension TagPhotosViewController: UITableViewDataSource {
+extension BoardListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pinList.count
     }
@@ -62,9 +63,10 @@ extension TagPhotosViewController: UITableViewDataSource {
     }
 }
 
-extension TagPhotosViewController: UITableViewDelegate {
+extension BoardListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let gridViewController = PhotosGridViewController()
+        gridViewController.boardId = boardId
         navigationController?.pushViewController(gridViewController, animated: true)
     }
 }
