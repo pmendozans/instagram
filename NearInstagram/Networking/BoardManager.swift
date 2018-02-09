@@ -13,16 +13,17 @@ class BoardManager {
     
     private enum Endpoints: String {
         case getPinsInBoard = "v1/boards/%@/pins/"
+        case getPinDetails = "/v1/pins/%@/"
     }
     
     private let apiManager = ApiManager()
     private let boardDecoder = BoardDecoder()
     private let parametersManager = ParametersManager()
+    private let pinFieldsToRequest = ["note", "image", "created_at", "id"]
     
     func getImages(byBoard board: String) -> Promise<[Pin]> {
-        let fieldsToRequest = ["note", "image", "created_at", "id"]
         return Promise { fullfill, reject in
-            parametersManager.getPinParameters(fields: fieldsToRequest).then { params -> ApiRouter in
+            parametersManager.getPinParameters(fields: pinFieldsToRequest).then { params -> ApiRouter in
                 return ApiRouter.get(Endpoints.getPinsInBoard.rawValue, board, params)
             }.then { router in
                 self.apiManager.genericRequest(request: router)
@@ -32,6 +33,22 @@ class BoardManager {
                 fullfill(photoList)
             }.catch { error in
                 reject(error)
+            }
+        }
+    }
+    
+    func getPinDetails(byPinId pinId: String) -> Promise<Pin> {
+        return Promise { fullfill, reject in
+            parametersManager.getPinParameters(fields: pinFieldsToRequest).then { params -> ApiRouter in
+                return ApiRouter.get(Endpoints.getPinDetails.rawValue, pinId, params)
+                }.then { router in
+                    self.apiManager.genericRequest(request: router)
+                }.then { responseJson in
+                    self.boardDecoder.decodePinDetails(jsonDictionary: responseJson)
+                }.then{ photoList in
+                    fullfill(photoList)
+                }.catch { error in
+                    reject(error)
             }
         }
     }

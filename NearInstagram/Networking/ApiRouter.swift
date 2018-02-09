@@ -39,8 +39,8 @@ extension ApiRouter: URLRequestConvertible {
                 ralativePath = String(format: endpoint, board)
             }
             var url = URL(string: ApiRouter.baseURLString)!
-            if let relativePath = ralativePath {
-                url = url.appendingPathComponent(ralativePath!)
+            if let endpointPath = ralativePath {
+                url = url.appendingPathComponent(endpointPath)
             }
             return url
         }()
