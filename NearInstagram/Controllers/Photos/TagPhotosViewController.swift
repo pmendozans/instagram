@@ -24,7 +24,6 @@ class TagPhotosViewController: UIViewController {
         loadMediaFromAPI()
     }
 
-    
     func loadMediaFromAPI() {
         boardManager.getImages(byBoard: "iphone").then { pinItems -> Void in
             self.pinList = pinItems
@@ -41,6 +40,12 @@ class TagPhotosViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
     }
+    
+    @objc func navigateToProfile(sender: Any) {
+        let profileViewController = ProfileMenuViewController()
+        let profileNavigationController = UINavigationController(rootViewController: profileViewController)
+        present(profileNavigationController, animated: true, completion: nil)
+    }
 }
 
 extension TagPhotosViewController: UITableViewDataSource {
@@ -52,10 +57,14 @@ extension TagPhotosViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! PinTableViewCell
         let pin = pinList[indexPath.row]
         cell.setupSubViews()
+        cell.loadPinData(pin: pin)
         return cell
     }
 }
 
 extension TagPhotosViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let gridViewController = PhotosGridViewController()
+        navigationController?.pushViewController(gridViewController, animated: true)
+    }
 }

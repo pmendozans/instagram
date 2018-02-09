@@ -15,6 +15,7 @@ class PhotosTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadViewControllers()
+        setupStyle()
     }
     
     func loadViewControllers() {
