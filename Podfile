@@ -10,6 +10,7 @@ target 'NearInstagram' do
   pod 'PureLayout'
   pod 'PinterestSDK', :git => 'https://github.com/pinterest/ios-pdk.git'
   pod 'SwiftyJSON'
+  pod 'Kingfisher'
   # Pods for NearInstagram
 
   target 'NearInstagramTests' do

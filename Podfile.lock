@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
   - Alamofire (4.6.0)
+  - Kingfisher (4.6.1)
   - LKAlertController (1.12.1)
   - ObjectMapper (3.1.0)
   - PinterestSDK (1.0.2):
@@ -38,6 +39,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Kingfisher
   - LKAlertController
   - ObjectMapper (~> 3.1)
   - PinterestSDK (from `https://github.com/pinterest/ios-pdk.git`)
@@ -58,6 +60,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   LKAlertController: e229465c0b4543ea122bfe62567747e6213ee43f
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PinterestSDK: 798aced4e2ce7a9607b3df1ac77abf2c72f57734
@@ -67,6 +70,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: 53e4e04e3b0ec48046e1a8be96fd46873e26031e
+PODFILE CHECKSUM: 0ba4c8388cbcf85c307742341f7fe9c5b6aabf03
 
 COCOAPODS: 1.4.0
