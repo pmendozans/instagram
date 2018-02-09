@@ -14,10 +14,11 @@ class PhotosGridViewController: UIViewController {
     var collectionView: UICollectionView!
     var modalImage: UIImageView!
     var pinList: [Pin] = []
-    var boardManager = BoardManager()
-    let cellIdentifier = "PinTableViewCell"
     var imageForModal: UIImage!
     var boardId: String!
+    
+    private let cellIdentifier = "PinTableViewCell"
+    private var boardApiManager = BoardApiManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class PhotosGridViewController: UIViewController {
     }
 
     func loadMediaFromAPI() {
-        boardManager.getImages(byBoard: boardId).then { pinItems -> Void in
+        boardApiManager.getImages(byBoard: boardId).then { pinItems -> Void in
             self.pinList = pinItems
             self.collectionView.reloadData()
         }.catch { error in
@@ -46,7 +47,7 @@ class PhotosGridViewController: UIViewController {
         longPressGesture.allowableMovement = 5
         var pressDuration = 0.5
         if self.traitCollection.forceTouchCapability == .available {
-            pressDuration = 0.5
+            pressDuration = 0.1
         }
         longPressGesture.minimumPressDuration = pressDuration
         cell.addGestureRecognizer(longPressGesture)
@@ -54,8 +55,10 @@ class PhotosGridViewController: UIViewController {
     
     @objc func longPressOnCell(sender: UILongPressGestureRecognizer) {
         let pointTouched = sender.location(in: collectionView)
+        let forceTouch = UITouch()
+        let didForceTouch = forceTouch.force >= forceTouch.maximumPossibleForce
         let indexPath = collectionView.indexPathForItem(at: pointTouched)?.row
-        if sender.state == .began {
+        if sender.state == .began && didForceTouch{
             openImageModal(pinIndex: indexPath!)
         }
         else if sender.state == .ended {

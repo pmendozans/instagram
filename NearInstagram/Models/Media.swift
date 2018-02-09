@@ -24,13 +24,13 @@ struct Media: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        id <- map[""]
-        location <- map["location"]
-        filter <- map["filter"]
-        tags <- map["tags"]
-        commentCount <- map["comments"]["count"]
-        likeCount <- map["likes"]["count"]
-        imageUrls <- map["images"]
-        videoUrls <- map["videos"]
+        id              <- map[""]
+        location        <- map["location"]
+        filter          <- map["filter"]
+        tags            <- map["tags"]
+        commentCount    <- map["comments"]["count"]
+        likeCount       <- map["likes"]["count"]
+        imageUrls       <- map["images"]
+        videoUrls       <- map["videos"]
     }
 }

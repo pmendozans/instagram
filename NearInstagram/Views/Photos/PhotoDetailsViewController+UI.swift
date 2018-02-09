@@ -11,26 +11,45 @@ import UIKit
 
 extension PhotoDetailsViewController {
     func setupViews() {
-        addPinImage()
-        stylePinImage()
-        addConstraintsToPinImage()
+        loadSubviews()
+        constraintsAndStylePinImage()
+        constraintsAndStyleLikeButton()
+        addGesturesToViews()
+        self.navigationItem.largeTitleDisplayMode = .never
     }
     
-    func addPinImage() {
-        pinImage = UIImageView()
+    func loadSubviews() {
         view.addSubview(pinImage)
+        view.addSubview(createdLabel)
+        view.addSubview(followCount)
+        view.addSubview(noteLabel)
+        view.addSubview(likeButton)
     }
     
-    func stylePinImage() {
+    func addGesturesToViews() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeButtonDoubleTap))
+        tap.numberOfTapsRequired = 2
+        likeButton.addGestureRecognizer(tap)
+    }
+    
+    func constraintsAndStylePinImage() {
         pinImage.layer.cornerRadius = 5
         pinImage.clipsToBounds = true
-        pinImage.backgroundColor = Colors.darkTransparent
-    }
-    
-    func addConstraintsToPinImage() {
+        pinImage.contentMode = .scaleAspectFit
         pinImage.autoPinEdge(toSuperviewEdge: .leading, withInset: 0)
-        pinImage.autoPinEdge(toSuperviewEdge: .top, withInset: 0)
-        pinImage.autoMatch(.height, to: .height, of: view)
+        pinImage.autoPinEdge(toSuperviewMargin: .top, relation: .equal)
+        pinImage.autoMatch(.height, to: .height, of: view, withMultiplier: 0.25)
         pinImage.autoMatch(.width, to: .width, of: view)
     }
+    
+    func constraintsAndStyleLikeButton() {
+        likeButton.setImage(#imageLiteral(resourceName: "like"), for: .normal)
+        likeButton.tintColor = UIColor.black
+        likeButton.autoPinEdge(.top, to: .bottom, of: pinImage, withOffset: 10)
+        likeButton.autoPinEdge(.leading, to: .leading, of: view, withOffset: 10)
+        likeButton.autoSetDimension(.height, toSize: 35)
+        likeButton.autoSetDimension(.width, toSize: 35)
+        
+    }
+    
 }

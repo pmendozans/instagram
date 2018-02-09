@@ -53,7 +53,6 @@ extension PinTableViewCell {
     }
     
     func setupCell() {
-        //preservesSuperviewLayoutMargins = false
         separatorInset = UIEdgeInsets.zero
         layoutMargins = UIEdgeInsets.zero
         selectionStyle = .none

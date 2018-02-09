@@ -19,8 +19,8 @@ struct MediaReource: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        lowResolution <- (map["low_resolution.url"], URLTransform())
-        thumbnail <- (map["thumbnail.url"], URLTransform())
-        standardResolution <- (map["standard_resolution.url"], URLTransform())
+        lowResolution       <- (map["low_resolution.url"], URLTransform())
+        thumbnail           <- (map["thumbnail.url"], URLTransform())
+        standardResolution  <- (map["standard_resolution.url"], URLTransform())
     }
 }

@@ -14,7 +14,6 @@ import SwiftyUserDefaults
 class PinterestManager {
     
     func login(viewController: UIViewController) -> Promise<Any> {
-
         return Promise { fullfill, reject in
             PDKClient.sharedInstance().authenticate(withPermissions: [PDKClientReadPublicPermissions, PDKClientReadRelationshipsPermissions, PDKClientWriteRelationshipsPermissions, PDKClientWritePublicPermissions], from: viewController, withSuccess: { user in
                 guard let token = PDKClient.sharedInstance().oauthToken else {
@@ -26,5 +25,9 @@ class PinterestManager {
                 reject(error!)
             })
         }
+    }
+    
+    func logout() {
+        Defaults[.apiToken] = ""
     }
 }

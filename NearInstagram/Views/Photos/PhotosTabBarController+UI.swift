@@ -11,8 +11,6 @@ import UIKit
 
 extension PhotosTabBarController {
     func setupStyle() {
-        //tabBar.barStyle = .black
-        tabBar.isTranslucent = false
         tabBar.tintColor = Colors.pinterestRed
     }
 }

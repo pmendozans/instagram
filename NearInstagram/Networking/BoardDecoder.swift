@@ -13,16 +13,17 @@ import Alamofire
 import SwiftyJSON
 
 class BoardDecoder {
+    private let decoderError = CustomError(message: "Decoder Error").createCustomError()
     func decodeMedia(jsonDictionary: Parameters) -> Promise<[Pin]> {
         return Promise { fullfill, reject in
             let json = JSON(jsonDictionary)
             //TODO: Move getting the data to another layer
             guard let pinData = json["data"].array else {
-                reject("" as! Error)
+                reject(decoderError)
                 return
             }
             guard let mediaItems = Mapper<Pin>().mapArray(JSONString: pinData.description) else {
-                reject("" as! Error)
+                reject(decoderError)
                 return
             }
             fullfill(mediaItems)
@@ -33,7 +34,7 @@ class BoardDecoder {
         return Promise { fullfill, reject in
             let json = JSON(jsonDictionary)
             guard let pin =  Pin(JSONString: json["data"].description) else {
-                reject("" as! Error)
+                reject(decoderError)
                 return
             }
             fullfill(pin)

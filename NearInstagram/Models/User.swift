@@ -13,11 +13,15 @@ struct User: Mappable {
     
     var id: Int = 0
     var username: String = ""
-    var fullName: String = ""
-    var profilePictureUrl: URL?
+    var firstName: String = ""
+    var lastName: String = ""
+    var createdAt: Date?
     var bio: String = ""
-    var website: URL?
-    var isBusiness: Bool?
+    var profilePictureUrl: URL?
+    var pins: Int = 0
+    var followers: Int = 0
+    var following: Int = 0
+    var boards: Int = 0
 
     init?(map: Map) {
         
@@ -26,10 +30,14 @@ struct User: Mappable {
     mutating func mapping(map: Map) {
         id                  <- map["id"]
         username            <- map["username"]
-        fullName            <- map["full_name"]
-        profilePictureUrl   <- map["profile_picture"]
+        firstName           <- map["first_name"]
+        lastName            <- map["last_name"]
+        createdAt           <- (map["created_at"], DateTransform())
         bio                 <- map["bio"]
-        website             <- map["website"]
-        isBusiness          <- map["isBusiness"]
+        profilePictureUrl   <- (map["image.60x60.url"], URLTransform())
+        pins                <- map["counts.pins"]
+        followers           <- map["counts.following"]
+        following           <- map["counts.followers"]
+        boards              <- map["counts.boards"]
     }
 }

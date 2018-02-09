@@ -21,10 +21,10 @@ struct Pin: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        note <- map["note"]
-        id <- map["id"]
-        imageUrl <- (map["image.original.url"], URLTransform())
-        media <- map["media.type"]
-        createdAt <- (map["created_at"], DateTransform())
+        note        <- map["note"]
+        id          <- map["id"]
+        imageUrl    <- (map["image.original.url"], URLTransform())
+        media       <- map["media.type"]
+        createdAt   <- (map["created_at"], DateTransform())
     }
 }

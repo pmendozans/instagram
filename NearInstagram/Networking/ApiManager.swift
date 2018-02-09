@@ -13,25 +13,24 @@ import PromiseKit
 struct ApiManager {
 
     func genericRequest(request: URLRequestConvertible) -> Promise<[String: Any]>{
+        let requestError = CustomError(message: "Request Error").createCustomError()
         return Promise { fullfill, reject in
             Alamofire.request(request).responseJSON { response in
                 switch response.result {
                 case .success(let value):
-                    let error = NSError(domain: "ServerErrorIn200", code: 0,
-                                        userInfo: [NSLocalizedDescriptionKey: "Server Error In 200"])
                     guard let statusCode = response.response?.statusCode else {
-                        reject(error)
+                        reject(requestError)
                         return
                     }
                     switch statusCode {
                     case 200:
                         guard let rawJson = value as? [String: Any] else {
-                            reject(error)
+                            reject(requestError)
                             return
                         }
                         fullfill(rawJson)
                     default:
-                        reject(error)
+                        reject(requestError)
                     }
                 case .failure(let error):
                     reject(error)

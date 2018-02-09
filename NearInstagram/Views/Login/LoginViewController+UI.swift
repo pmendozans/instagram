@@ -13,16 +13,13 @@ import WebKit
 extension LoginViewController {
     
     func setupSubviews() {
-        //Login
         addLoginButton()
         styleLoginButton()
         addloginButtonConstraints()
-        
-        //Top logo
         addTopLogo()
         styleTopLogo()
         addTopLogoConstraints()
-        
+        view.backgroundColor = UIColor.white
     }
     //MARK: Login Button
     func addLoginButton() {

@@ -11,8 +11,9 @@ import PromiseKit
 import SwiftyUserDefaults
 
 class ParametersManager {
-    func getPinParameters(fields: [String]) -> Promise<[String: Any]>{
+    func getTokenAndFieldsParameters(fields: [String]) -> Promise<[String: Any]>{
         return Promise { fullfill, _ in
+            print(Defaults[.apiToken])
             var fieldsString = ""
             for (index, field) in fields.enumerated() {
                 let trailingComma = (index == fields.count - 1) ? "" : ","
@@ -25,4 +26,6 @@ class ParametersManager {
             fullfill(params)
         }
     }
+    
+    
 }

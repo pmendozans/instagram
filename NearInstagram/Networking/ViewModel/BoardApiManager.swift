@@ -9,7 +9,7 @@
 import Foundation
 import PromiseKit
 
-class BoardManager {
+class BoardApiManager {
     
     private enum Endpoints: String {
         case getPinsInBoard = "v1/boards/%@/pins/"
@@ -23,7 +23,7 @@ class BoardManager {
     
     func getImages(byBoard board: String) -> Promise<[Pin]> {
         return Promise { fullfill, reject in
-            parametersManager.getPinParameters(fields: pinFieldsToRequest).then { params -> ApiRouter in
+            parametersManager.getTokenAndFieldsParameters(fields: pinFieldsToRequest).then { params -> ApiRouter in
                 return ApiRouter.get(Endpoints.getPinsInBoard.rawValue, board, params)
             }.then { router in
                 self.apiManager.genericRequest(request: router)
@@ -39,7 +39,7 @@ class BoardManager {
     
     func getPinDetails(byPinId pinId: String) -> Promise<Pin> {
         return Promise { fullfill, reject in
-            parametersManager.getPinParameters(fields: pinFieldsToRequest).then { params -> ApiRouter in
+            parametersManager.getTokenAndFieldsParameters(fields: pinFieldsToRequest).then { params -> ApiRouter in
                 return ApiRouter.get(Endpoints.getPinDetails.rawValue, pinId, params)
                 }.then { router in
                     self.apiManager.genericRequest(request: router)

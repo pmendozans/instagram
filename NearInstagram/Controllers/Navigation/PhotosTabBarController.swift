@@ -10,8 +10,8 @@ import UIKit
 
 class PhotosTabBarController: UITabBarController {
     
-    let tags = ["iPhone", "iPad", "Mac"]
-    let boards = ["685532443217810716", "685532443217817355", "685532443217817358"]
+    private let tags = ["iPhone", "iPad", "Mac"]
+    private let boards = ["685532443217810716", "685532443217817355", "685532443217817358"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

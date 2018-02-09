@@ -7,4 +7,5 @@
 */
 
 "login-with-pinterest" = "Login with Pinterest";
-"photos" = "photos";
+"photos" = "Photos";
+"server-error" = "Can't connect to the server, try again latter";

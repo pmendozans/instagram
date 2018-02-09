@@ -11,9 +11,15 @@ import Kingfisher
 
 class PhotoDetailsViewController: UIViewController {
     var pinId: String = ""
-    var pinImage: UIImageView!
-    var boardManager = BoardManager()
+    var pinImage = UIImageView()
+    var createdLabel = UILabel()
+    var followCount = UILabel()
+    var noteLabel = UILabel()
+    var likeButton = UIButton()
     var pin: Pin!
+    
+    private var boardApiManager = BoardApiManager()
+    private var isLiked = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +28,7 @@ class PhotoDetailsViewController: UIViewController {
     }
     
     func loadPinInformation() {
-        boardManager.getPinDetails(byPinId: pinId).then { pin -> Void in
+        boardApiManager.getPinDetails(byPinId: pinId).then { pin -> Void in
             self.pin = pin
             self.showDataInViews()
         }.catch { error in
@@ -32,9 +38,17 @@ class PhotoDetailsViewController: UIViewController {
     
     func showDataInViews(){
         if let imageUrl = pin.imageUrl {
-            pinImage.kf.setImage(with: imageUrl)
+            pinImage.kf.setImage(with: imageUrl, placeholder: #imageLiteral(resourceName: "pinterest"))
         }
         
     }
     
+    @objc func likeButtonDoubleTap() {
+        var tintColor = Colors.pinterestRed
+        if isLiked {
+            tintColor = UIColor.black
+        }
+        isLiked = !isLiked
+        likeButton.tintColor = tintColor
+    }
 }
