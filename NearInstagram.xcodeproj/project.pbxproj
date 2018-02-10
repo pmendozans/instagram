@@ -17,7 +17,6 @@
 		6E9437B5202DCE11008756ED /* PhotoDetailsViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9437B4202DCE11008756ED /* PhotoDetailsViewController+UI.swift */; };
 		7214A84220251786004360FD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84120251786004360FD /* User.swift */; };
 		7214A84620252235004360FD /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84520252235004360FD /* Media.swift */; };
-		7214A84E20253110004360FD /* MediaReource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A84D20253110004360FD /* MediaReource.swift */; };
 		7214A85220253489004360FD /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A85120253489004360FD /* ApiRouter.swift */; };
 		7214A85F202A54EB004360FD /* PhotosTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A85E202A54EB004360FD /* PhotosTabBarController.swift */; };
 		7214A867202A611B004360FD /* LoginViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7214A866202A611B004360FD /* LoginViewController+UI.swift */; };
@@ -80,7 +79,6 @@
 		6EF16E36202B084700E506FC /* Instagram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instagram-Bridging-Header.h"; sourceTree = "<group>"; };
 		7214A84120251786004360FD /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7214A84520252235004360FD /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
-		7214A84D20253110004360FD /* MediaReource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaReource.swift; sourceTree = "<group>"; };
 		7214A85120253489004360FD /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		7214A85E202A54EB004360FD /* PhotosTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosTabBarController.swift; sourceTree = "<group>"; };
 		7214A866202A611B004360FD /* LoginViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+UI.swift"; sourceTree = "<group>"; };
@@ -214,6 +212,13 @@
 			path = Photos;
 			sourceTree = "<group>";
 		};
+		722C62B1202E665E00519108 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		724AB066202B6D5C0000C431 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +253,7 @@
 		7287A800202276B7008C6938 /* NearInstagram */ = {
 			isa = PBXGroup;
 			children = (
+				722C62B1202E665E00519108 /* Protocols */,
 				7287A83020227885008C6938 /* Models */,
 				7287A8312022788C008C6938 /* Views */,
 				7287A82F2022786E008C6938 /* Controllers */,
@@ -297,7 +303,6 @@
 			children = (
 				7214A84120251786004360FD /* User.swift */,
 				7214A84520252235004360FD /* Media.swift */,
-				7214A84D20253110004360FD /* MediaReource.swift */,
 				724AB071202BAEE50000C431 /* Pin.swift */,
 			);
 			path = Models;
@@ -742,7 +747,6 @@
 				6E4236A4202C6AC400CE8D45 /* PinTableViewCell+UI.swift in Sources */,
 				724AB076202BCB9C0000C431 /* ParametersManager.swift in Sources */,
 				72FE9128202CC5ED00BD3FD8 /* PinCollectionViewCell.swift in Sources */,
-				7214A84E20253110004360FD /* MediaReource.swift in Sources */,
 				7214A84620252235004360FD /* Media.swift in Sources */,
 				72FE9133202D02B500BD3FD8 /* ProfileMenuViewController.swift in Sources */,
 				7287A802202276B7008C6938 /* AppDelegate.swift in Sources */,

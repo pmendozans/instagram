@@ -11,17 +11,17 @@ import ObjectMapper
 
 struct User: Mappable {
     
-    var id: Int = 0
-    var username: String = ""
-    var firstName: String = ""
-    var lastName: String = ""
+    var id = 0
+    var username = ""
+    var firstName = ""
+    var lastName = ""
+    var bio = ""
+    var pins = 0
+    var followers = 0
+    var following = 0
+    var boards = 0
     var createdAt: Date?
-    var bio: String = ""
     var profilePictureUrl: URL?
-    var pins: Int = 0
-    var followers: Int = 0
-    var following: Int = 0
-    var boards: Int = 0
 
     init?(map: Map) {
         
@@ -32,12 +32,12 @@ struct User: Mappable {
         username            <- map["username"]
         firstName           <- map["first_name"]
         lastName            <- map["last_name"]
-        createdAt           <- (map["created_at"], DateTransform())
         bio                 <- map["bio"]
-        profilePictureUrl   <- (map["image.60x60.url"], URLTransform())
         pins                <- map["counts.pins"]
         followers           <- map["counts.following"]
         following           <- map["counts.followers"]
         boards              <- map["counts.boards"]
+        createdAt           <- (map["created_at"], DateTransform())
+        profilePictureUrl   <- (map["image.60x60.url"], URLTransform())
     }
 }

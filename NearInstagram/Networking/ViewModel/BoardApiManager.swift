@@ -41,14 +41,14 @@ class BoardApiManager {
         return Promise { fullfill, reject in
             parametersManager.getTokenAndFieldsParameters(fields: pinFieldsToRequest).then { params -> ApiRouter in
                 return ApiRouter.get(Endpoints.getPinDetails.rawValue, pinId, params)
-                }.then { router in
-                    self.apiManager.genericRequest(request: router)
-                }.then { responseJson in
-                    self.boardDecoder.decodePinDetails(jsonDictionary: responseJson)
-                }.then{ photoList in
-                    fullfill(photoList)
-                }.catch { error in
-                    reject(error)
+            }.then { router in
+                self.apiManager.genericRequest(request: router)
+            }.then { responseJson in
+                self.boardDecoder.decodePinDetails(jsonDictionary: responseJson)
+            }.then{ photoList in
+                fullfill(photoList)
+            }.catch { error in
+                reject(error)
             }
         }
     }

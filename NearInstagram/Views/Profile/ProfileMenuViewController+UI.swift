@@ -11,9 +11,10 @@ import UIKit
 
 extension ProfileMenuViewController {
     func setupViews() {
+        loadSubviews()
         addNavigationCloseButton()
         navigationController?.navigationBar.topItem?.title = "PROFILE"
-        loadSubviews()
+        
         constraintAndStyleLogoutButton()
         constraintAndStyleProfileImage()
     }
@@ -22,6 +23,12 @@ extension ProfileMenuViewController {
         view.addSubview(logoutButton)
         view.addSubview(profileImage)
         view.addSubview(usernameLabel)
+    }
+    
+    func addNavigationCloseButton() {
+        let profileBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "close-button"), style: .plain, target: self, action: #selector(self.closeProfile(sender:)))
+        profileBarButton.tintColor = Colors.pinterestRed
+        navigationItem.setRightBarButton(profileBarButton, animated: false)
     }
     
     func constraintAndStyleLogoutButton() {
@@ -45,9 +52,5 @@ extension ProfileMenuViewController {
         profileImage.autoMatch(.width, to: .width, of: view)
     }
     
-    func addNavigationCloseButton() {
-        let profileBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "close-button"), style: .plain, target: self, action: #selector(self.closeProfile(sender:)))
-        profileBarButton.tintColor = Colors.pinterestRed
-        navigationItem.setRightBarButton(profileBarButton, animated: false)
-    }
+    
 }

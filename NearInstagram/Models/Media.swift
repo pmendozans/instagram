@@ -10,12 +10,12 @@ import Foundation
 import ObjectMapper
 
 struct Media: Mappable {
-    var id: Int = 0
-    var location: String = ""
-    var filter: String = ""
-    var tags: [String] = []
-    var commentCount: Int = 0
-    var likeCount: Int = 0
+    var id = 0
+    var location = ""
+    var filter = ""
+    var tags:[String] = []
+    var commentCount = 0
+    var likeCount = 0
     var imageUrls: MediaReource?
     var videoUrls: MediaReource?
     

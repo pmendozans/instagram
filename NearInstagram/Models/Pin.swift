@@ -10,11 +10,11 @@ import Foundation
 import ObjectMapper
 
 struct Pin: Mappable {
-    var note: String = ""
+    var note = ""
+    var media = ""
+    var id = ""
     var imageUrl: URL?
-    var media: String = ""
     var createdAt: Date?
-    var id: String = ""
     
     init?(map: Map) {
         
@@ -22,9 +22,9 @@ struct Pin: Mappable {
     
     mutating func mapping(map: Map) {
         note        <- map["note"]
+        media       <- map["media.type"]
         id          <- map["id"]
         imageUrl    <- (map["image.original.url"], URLTransform())
-        media       <- map["media.type"]
         createdAt   <- (map["created_at"], DateTransform())
     }
 }
