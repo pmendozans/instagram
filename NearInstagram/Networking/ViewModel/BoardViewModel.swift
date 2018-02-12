@@ -9,25 +9,14 @@
 import Foundation
 import PromiseKit
 
-class BoardApiManager {
-    
-    private enum Endpoints: String {
-        case getPinsInBoard = "v1/boards/%@/pins/"
-        case getPinDetails = "/v1/pins/%@/"
-    }
+class BoardViewModel {
     
     private let apiManager = ApiManager()
     private let boardDecoder = BoardDecoder()
-    private let parametersManager = ParametersManager()
-    private let pinFieldsToRequest = ["note", "image", "created_at", "id"]
-    
+
     func getImages(byBoard board: String) -> Promise<[Pin]> {
         return Promise { fullfill, reject in
-            parametersManager.getTokenAndFieldsParameters(fields: pinFieldsToRequest).then { params -> ApiRouter in
-                return ApiRouter.get(Endpoints.getPinsInBoard.rawValue, board, params)
-            }.then { router in
-                self.apiManager.genericRequest(request: router)
-            }.then { responseJson in
+            apiManager.genericRequest(request: PinRouter.getPinsInBoard(boardName: board)).then { responseJson in
                 self.boardDecoder.decodeMedia(jsonDictionary: responseJson)
             }.then{ photoList in
                 fullfill(photoList)
@@ -39,16 +28,12 @@ class BoardApiManager {
     
     func getPinDetails(byPinId pinId: String) -> Promise<Pin> {
         return Promise { fullfill, reject in
-            parametersManager.getTokenAndFieldsParameters(fields: pinFieldsToRequest).then { params -> ApiRouter in
-                return ApiRouter.get(Endpoints.getPinDetails.rawValue, pinId, params)
-            }.then { router in
-                self.apiManager.genericRequest(request: router)
-            }.then { responseJson in
+            apiManager.genericRequest(request: PinRouter.getPinDetails(pinId: pinId)).then { responseJson in
                 self.boardDecoder.decodePinDetails(jsonDictionary: responseJson)
-            }.then{ photoList in
-                fullfill(photoList)
-            }.catch { error in
-                reject(error)
+                }.then{ photoInformation in
+                    fullfill(photoInformation)
+                }.catch { error in
+                    reject(error)
             }
         }
     }

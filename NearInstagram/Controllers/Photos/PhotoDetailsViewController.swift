@@ -18,7 +18,7 @@ class PhotoDetailsViewController: UIViewController {
     var likeButton = UIButton()
     var pin: Pin!
     
-    private var boardApiManager = BoardApiManager()
+    private var boardViewModel = BoardViewModel()
     private var isLiked = false
     
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class PhotoDetailsViewController: UIViewController {
     }
     
     private func loadPinInformation() {
-        boardApiManager.getPinDetails(byPinId: pinId).then { pin -> Void in
+        boardViewModel.getPinDetails(byPinId: pinId).then { pin -> Void in
             self.pin = pin
             self.showDataInViews()
         }.catch { error in

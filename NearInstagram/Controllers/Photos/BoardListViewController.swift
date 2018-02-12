@@ -11,14 +11,14 @@ import PromiseKit
 
 class BoardListViewController: UIViewController {
     
-    private var pinList: [Pin] = []
-    private var boardApiManager = BoardApiManager()
-    private let cellIdentifier = "PinTableViewCell"
-    private let errorAlert = ErrorAlerts.serverError
-    
     var tableView: UITableView!
     var tagName: String!
     var boardId: String!
+    
+    private var pinList: [Pin] = []
+    private var boardViewModel = BoardViewModel()
+    private let cellIdentifier = "PinTableViewCell"
+    private let errorAlert = ErrorAlerts.serverError
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class BoardListViewController: UIViewController {
     }
     
     private func loadMediaFromAPI() {
-        boardApiManager.getImages(byBoard: boardId).then { pinItems -> Void in
+        boardViewModel.getImages(byBoard: boardId).then { pinItems -> Void in
             self.pinList = pinItems
             self.tableView.reloadData()
         }.catch { error in

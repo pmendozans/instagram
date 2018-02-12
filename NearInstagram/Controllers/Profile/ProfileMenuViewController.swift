@@ -13,9 +13,10 @@ class ProfileMenuViewController: UIViewController {
     let logoutButton = UIButton()
     let profileImage = UIImageView()
     let usernameLabel = UILabel()
+    
     private let pinterestManager = PinterestManager()
     private let navigationManager = NavigationManager()
-    private let userApiManager = UserApiManager()
+    private let userViewModel = UserViewModel()
     private let errorAlert = ErrorAlerts.serverError
     private var userInformation: User!
 
@@ -32,7 +33,7 @@ class ProfileMenuViewController: UIViewController {
     }
     
     func loadUserInformation() {
-        userApiManager.getUserInformation().then { userInformation -> Void in
+        userViewModel.getUserInformation().then { userInformation -> Void in
             print(userInformation)
             self.userInformation = userInformation
             self.renderInformationToView()

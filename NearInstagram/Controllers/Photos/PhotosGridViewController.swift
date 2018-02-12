@@ -18,7 +18,7 @@ class PhotosGridViewController: UIViewController {
     var boardId: String!
     
     private let cellIdentifier = "PinTableViewCell"
-    private var boardApiManager = BoardApiManager()
+    private var boardViewModel = BoardViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class PhotosGridViewController: UIViewController {
     }
 
     private func loadMediaFromAPI() {
-        boardApiManager.getImages(byBoard: boardId).then { pinItems -> Void in
+        boardViewModel.getImages(byBoard: boardId).then { pinItems -> Void in
             self.pinList = pinItems
             self.collectionView.reloadData()
         }.catch { error in

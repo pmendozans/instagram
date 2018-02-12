@@ -11,6 +11,8 @@ import Alamofire
 import PromiseKit
 
 struct ApiManager {
+    
+    static let baseUrlString = "https://api.pinterest.com"
 
     func genericRequest(request: URLRequestConvertible) -> Promise<[String: Any]>{
         let requestError = CustomError(message: "Request Error").createCustomError()

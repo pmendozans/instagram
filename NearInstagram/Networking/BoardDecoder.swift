@@ -17,7 +17,6 @@ class BoardDecoder {
     func decodeMedia(jsonDictionary: Parameters) -> Promise<[Pin]> {
         return Promise { fullfill, reject in
             let json = JSON(jsonDictionary)
-            //TODO: Move getting the data to another layer
             guard let pinData = json["data"].array else {
                 reject(decoderError)
                 return
