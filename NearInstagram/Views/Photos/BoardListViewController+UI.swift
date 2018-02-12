@@ -13,14 +13,16 @@ import PureLayout
 extension BoardListViewController {
     
     func setupSubviews() {
-        addTable()
+        view.backgroundColor = UIColor.white
+        loadSubvies()
         addConstraintsToTable()
+        addConstraintsToActivityIndicator()
         addProfileButton()
     }
     
-    private func addTable() {
-        tableView = UITableView()
+    private func loadSubvies() {
         view.addSubview(tableView)
+        view.addSubview(activityIndicator)
     }
     
     private func addConstraintsToTable() {
@@ -28,6 +30,14 @@ extension BoardListViewController {
         tableView.autoMatch(.width, to: .width, of: view)
         tableView.autoPinEdge(toSuperviewEdge: .leading, withInset: 0)
         tableView.autoPinEdge(toSuperviewEdge: .top, withInset: 0)
+        tableView.isHidden = true
+    }
+    
+    private func addConstraintsToActivityIndicator() {
+        activityIndicator.autoCenterInSuperview()
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        activityIndicator.color = Colors.pinterestRed
     }
     
     private func addProfileButton() {

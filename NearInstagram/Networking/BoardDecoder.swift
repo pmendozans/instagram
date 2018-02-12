@@ -32,7 +32,10 @@ class BoardDecoder {
     func decodePinDetails(jsonDictionary: Parameters) -> Promise<Pin> {
         return Promise { fullfill, reject in
             let json = JSON(jsonDictionary)
-            guard let pin =  Pin(JSONString: json["data"].description) else {
+            if !json["data"].exists() {
+                reject(decoderError)
+            }
+            guard let pin = Pin(JSONString: json["data"].description) else {
                 reject(decoderError)
                 return
             }

@@ -28,6 +28,9 @@ class UserDecoder {
     func decodeUserInfo(jsonDictionary: Parameters) -> Promise<User> {
         return Promise { fullfill, reject in
             let json = JSON(jsonDictionary)
+            if !json["data"].exists() {
+                reject(decoderError)
+            }
             guard let user =  User(JSONString: json["data"].description) else {
                 reject(decoderError)
                 return

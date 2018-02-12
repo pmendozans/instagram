@@ -17,7 +17,7 @@ struct ApiManager {
     func genericRequest(request: URLRequestConvertible) -> Promise<[String: Any]>{
         let requestError = CustomError(message: "Request Error").createCustomError()
         return Promise { fullfill, reject in
-            Alamofire.request(request).responseJSON { response in
+            Alamofire.request(request).validate().responseJSON { response in
                 switch response.result {
                 case .success(let value):
                     guard let statusCode = response.response?.statusCode else {

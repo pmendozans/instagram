@@ -11,7 +11,8 @@ import PromiseKit
 
 class BoardListViewController: UIViewController {
     
-    var tableView: UITableView!
+    var tableView = UITableView()
+    var activityIndicator = UIActivityIndicatorView()
     var tagName: String!
     var boardId: String!
     
@@ -39,8 +40,11 @@ class BoardListViewController: UIViewController {
         boardViewModel.getImages(byBoard: boardId).then { pinItems -> Void in
             self.pinList = pinItems
             self.tableView.reloadData()
+            self.tableView.isHidden = false
         }.catch { error in
             self.errorAlert.show()
+        }.always {
+            self.activityIndicator.stopAnimating()
         }
     }
     
