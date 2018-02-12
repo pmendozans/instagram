@@ -27,21 +27,21 @@ class BoardListViewController: UIViewController {
         loadMediaFromAPI()
     }
     
-    func loadMediaFromAPI() {
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(PinTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+    }
+    
+    private func loadMediaFromAPI() {
         boardApiManager.getImages(byBoard: boardId).then { pinItems -> Void in
             self.pinList = pinItems
             self.tableView.reloadData()
         }.catch { error in
             self.errorAlert.show()
         }
-    }
-    
-    func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(PinTableViewCell.self, forCellReuseIdentifier: cellIdentifier)
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 100
     }
     
     @objc func navigateToProfile(sender: Any) {

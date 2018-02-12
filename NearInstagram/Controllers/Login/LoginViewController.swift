@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     
     var loginButton: UIButton!
     var topLogoImage: UIImageView!
-    let pinterestManager = PinterestManager()
+    private let pinterestManager = PinterestManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -27,20 +27,19 @@ class PhotoDetailsViewController: UIViewController {
         loadPinInformation()
     }
     
-    func loadPinInformation() {
+    private func showDataInViews(){
+        if let imageUrl = pin.imageUrl {
+            pinImage.kf.setImage(with: imageUrl, placeholder: #imageLiteral(resourceName: "pinterest"))
+        }
+    }
+    
+    private func loadPinInformation() {
         boardApiManager.getPinDetails(byPinId: pinId).then { pin -> Void in
             self.pin = pin
             self.showDataInViews()
         }.catch { error in
             print(error.localizedDescription)
         }
-    }
-    
-    func showDataInViews(){
-        if let imageUrl = pin.imageUrl {
-            pinImage.kf.setImage(with: imageUrl, placeholder: #imageLiteral(resourceName: "pinterest"))
-        }
-        
     }
     
     @objc func likeButtonDoubleTap() {

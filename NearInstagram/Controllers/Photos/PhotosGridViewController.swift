@@ -26,8 +26,14 @@ class PhotosGridViewController: UIViewController {
         setupCollectionView()
         loadMediaFromAPI()
     }
+    
+    private func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(PinCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
+    }
 
-    func loadMediaFromAPI() {
+    private func loadMediaFromAPI() {
         boardApiManager.getImages(byBoard: boardId).then { pinItems -> Void in
             self.pinList = pinItems
             self.collectionView.reloadData()
@@ -36,13 +42,7 @@ class PhotosGridViewController: UIViewController {
         }
     }
     
-    func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(PinCollectionViewCell.self, forCellWithReuseIdentifier: cellIdentifier)
-    }
-    
-    func addGestures(_ cell: PinCollectionViewCell) {
+    private func addGestures(_ cell: PinCollectionViewCell) {
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.longPressOnCell(sender:)))
         longPressGesture.allowableMovement = 5
         var pressDuration = 0.5

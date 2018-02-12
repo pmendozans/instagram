@@ -19,19 +19,19 @@ extension ProfileMenuViewController {
         constraintAndStyleProfileImage()
     }
     
-    func loadSubviews() {
+    private func loadSubviews() {
         view.addSubview(logoutButton)
         view.addSubview(profileImage)
         view.addSubview(usernameLabel)
     }
     
-    func addNavigationCloseButton() {
+    private func addNavigationCloseButton() {
         let profileBarButton = UIBarButtonItem(image: #imageLiteral(resourceName: "close-button"), style: .plain, target: self, action: #selector(self.closeProfile(sender:)))
         profileBarButton.tintColor = Colors.pinterestRed
         navigationItem.setRightBarButton(profileBarButton, animated: false)
     }
     
-    func constraintAndStyleLogoutButton() {
+    private func constraintAndStyleLogoutButton() {
         logoutButton.setTitle(NSLocalizedString("logout", comment: "").uppercased(), for: .normal)
         logoutButton.backgroundColor = Colors.pinterestRed
         logoutButton.layer.cornerRadius = 5
@@ -42,7 +42,7 @@ extension ProfileMenuViewController {
         logoutButton.autoSetDimension(.height, toSize: 45)
     }
     
-    func constraintAndStyleProfileImage() {
+    private func constraintAndStyleProfileImage() {
         profileImage.layer.cornerRadius = 5
         profileImage.clipsToBounds = true
         profileImage.contentMode = .scaleAspectFit

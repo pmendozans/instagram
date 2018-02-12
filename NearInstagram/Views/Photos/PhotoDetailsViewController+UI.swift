@@ -18,7 +18,7 @@ extension PhotoDetailsViewController {
         self.navigationItem.largeTitleDisplayMode = .never
     }
     
-    func loadSubviews() {
+    private func loadSubviews() {
         view.addSubview(pinImage)
         view.addSubview(createdLabel)
         view.addSubview(followCount)
@@ -26,13 +26,7 @@ extension PhotoDetailsViewController {
         view.addSubview(likeButton)
     }
     
-    func addGesturesToViews() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(likeButtonDoubleTap))
-        tap.numberOfTapsRequired = 2
-        likeButton.addGestureRecognizer(tap)
-    }
-    
-    func constraintsAndStylePinImage() {
+    private func constraintsAndStylePinImage() {
         pinImage.layer.cornerRadius = 5
         pinImage.clipsToBounds = true
         pinImage.contentMode = .scaleAspectFit
@@ -42,14 +36,18 @@ extension PhotoDetailsViewController {
         pinImage.autoMatch(.width, to: .width, of: view)
     }
     
-    func constraintsAndStyleLikeButton() {
+    private func constraintsAndStyleLikeButton() {
         likeButton.setImage(#imageLiteral(resourceName: "like"), for: .normal)
         likeButton.tintColor = UIColor.black
         likeButton.autoPinEdge(.top, to: .bottom, of: pinImage, withOffset: 10)
         likeButton.autoPinEdge(.leading, to: .leading, of: view, withOffset: 10)
         likeButton.autoSetDimension(.height, toSize: 35)
         likeButton.autoSetDimension(.width, toSize: 35)
-        
     }
     
+    private func addGesturesToViews() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeButtonDoubleTap))
+        tap.numberOfTapsRequired = 2
+        likeButton.addGestureRecognizer(tap)
+    }
 }

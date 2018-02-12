@@ -19,24 +19,30 @@ extension PinTableViewCell {
         addConstraintsToDescription()
     }
     
-    func addPinImage() {
+    private func setupCell() {
+        separatorInset = UIEdgeInsets.zero
+        layoutMargins = UIEdgeInsets.zero
+        selectionStyle = .none
+    }
+    
+    private func addPinImage() {
         pinImage = UIImageView()
         addSubview(pinImage)
     }
     
-    func stylePinImage() {
+    private func stylePinImage() {
         pinImage.clipsToBounds = true
         pinImage.layer.cornerRadius = 5
         pinImage.contentMode = .scaleAspectFill
     }
     
-    func addPinDescription() {
+    private func addPinDescription() {
         pinDescription = UITextView()
         addSubview(pinDescription)
         pinDescription.isUserInteractionEnabled = false
     }
     
-    func addConstraintsToImage() {
+    private func addConstraintsToImage() {
         pinImage.autoPinEdge(toSuperviewEdge: .leading, withInset: 8)
         pinImage.autoPinEdge(toSuperviewEdge: .bottom, withInset: 8)
         pinImage.autoPinEdge(toSuperviewEdge: .top, withInset: 8)
@@ -44,24 +50,11 @@ extension PinTableViewCell {
         pinImage.autoSetDimension(.width, toSize: 80)
     }
     
-    func addConstraintsToDescription() {
+    private func addConstraintsToDescription() {
         pinDescription.autoPinEdge(toSuperviewEdge: .trailing, withInset: 8)
         pinDescription.autoPinEdge(toSuperviewEdge: .top, withInset: 8)
         pinDescription.autoPinEdge(.leading, to: .trailing, of: pinImage, withOffset: 8)
         pinDescription.autoPinEdge(toSuperviewEdge: .bottom, withInset: 8)
         pinDescription.autoSetDimension(.height, toSize: 80)
     }
-    
-    func setupCell() {
-        separatorInset = UIEdgeInsets.zero
-        layoutMargins = UIEdgeInsets.zero
-        selectionStyle = .none
-    }
-    
-    func sizeHeightToContent() {
-        pinDescription.translatesAutoresizingMaskIntoConstraints = true
-        pinDescription.sizeToFit()
-        pinDescription.isScrollEnabled = false
-    }
-
 }

@@ -16,19 +16,19 @@ extension PinCollectionViewCell {
         addConstraintsToImage()
     }
     
-    func addPinImage() {
+    private func addPinImage() {
         pinImage = UIImageView(image: #imageLiteral(resourceName: "pinterest"))
         pinImage.contentMode = .scaleAspectFit
         addSubview(pinImage)
     }
     
-    func styleImage(){
+    private func styleImage(){
         pinImage.layer.cornerRadius = 5
         pinImage.clipsToBounds = true
         pinImage.backgroundColor = Colors.darkTransparent
     }
     
-    func addConstraintsToImage() {
+    private func addConstraintsToImage() {
         pinImage.autoPinEdge(toSuperviewEdge: .leading, withInset: 0)
         pinImage.autoPinEdge(toSuperviewEdge: .top, withInset: 0)
         pinImage.autoMatch(.height, to: .height, of: self)
