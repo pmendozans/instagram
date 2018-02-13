@@ -11,18 +11,13 @@ import PromiseKit
 
 class UserViewModel {
     
-    private let apiManager = ApiManager()
+    private let userService = UserService()
     private let userDecoder = UserDecoder()
     
     func getUserInformation() -> Promise<User> {
-        return Promise { fullfill, reject in
-            apiManager.genericRequest(request: UserRouter.getUserInformation()).then { responseJson in
-                self.userDecoder.decodeUserInfo(jsonDictionary: responseJson)
-            }.then{ userInformation in
-                fullfill(userInformation)
-            }.catch { error in
-                reject(error)
-            }
-        }
+        return userService.getUserInformation()
+                .then { responseJson in
+                    return self.userDecoder.decodeUserInfo(jsonDictionary: responseJson)
+                }
     }
 }

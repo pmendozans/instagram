@@ -42,4 +42,18 @@ class BoardDecoder {
             fullfill(pin)
         }
     }
+    
+    func genericObjectDecoder<T: Mappable>(jsonResponse: [String: Any]) -> Promise<T> {
+        return Promise { fullfill, reject in
+            let json = JSON(jsonResponse)
+            if !json["data"].exists() {
+                reject(decoderError)
+            }
+            guard let decodedObject = Mapper<T>().map(JSONString: json["data"].description) else {
+                reject(decoderError)
+                return
+            }
+            fullfill(decodedObject)
+        }
+    }
 }

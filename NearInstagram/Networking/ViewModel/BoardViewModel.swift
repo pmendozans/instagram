@@ -11,30 +11,23 @@ import PromiseKit
 
 class BoardViewModel {
     
-    private let apiManager = ApiManager()
+    private let pisService = PinService()
     private let boardDecoder = BoardDecoder()
 
     func getImages(byBoard board: String) -> Promise<[Pin]> {
-        return Promise { fullfill, reject in
-            apiManager.genericRequest(request: PinRouter.getPinsInBoard(boardName: board)).then { responseJson in
-                self.boardDecoder.decodeMedia(jsonDictionary: responseJson)
-            }.then{ photoList in
-                fullfill(photoList)
-            }.catch { error in
-                reject(error)
-            }
-        }
+        return pisService.getImages(byBoard: board)
+                .then { responseJson in
+                    return self.boardDecoder.decodeMedia(jsonDictionary: responseJson)
+                }
     }
     
     func getPinDetails(byPinId pinId: String) -> Promise<Pin> {
-        return Promise { fullfill, reject in
-            apiManager.genericRequest(request: PinRouter.getPinDetails(pinId: pinId)).then { responseJson in
-                self.boardDecoder.decodePinDetails(jsonDictionary: responseJson)
-                }.then{ photoInformation in
-                    fullfill(photoInformation)
-                }.catch { error in
-                    reject(error)
-            }
-        }
+        return pisService.getPinDetails(byPinId: pinId)
+                .then { responseJson -> Promise<Pin> in
+//                    if let objPin: Pin = self.boardDecoder.genericObjectDecoder(params: responseJson) {
+//                        print(objPin)
+//                    }
+                    return self.boardDecoder.decodePinDetails(jsonDictionary: responseJson)
+                }
     }
 }

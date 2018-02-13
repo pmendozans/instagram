@@ -39,6 +39,8 @@
 		729B43A1202E29FB00A466FF /* UserDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B43A0202E29FB00A466FF /* UserDecoder.swift */; };
 		729B43A3202E39C000A466FF /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729B43A2202E39C000A466FF /* NavigationManager.swift */; };
 		72D32ECB20321D570067DE12 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D32ECA20321D570067DE12 /* UserRouter.swift */; };
+		72D32ECE203248A80067DE12 /* PinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D32ECD203248A80067DE12 /* PinService.swift */; };
+		72D32ED0203248B70067DE12 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D32ECF203248B70067DE12 /* UserService.swift */; };
 		72FE9124202CC3AD00BD3FD8 /* PhotosGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE9123202CC3AD00BD3FD8 /* PhotosGridViewController.swift */; };
 		72FE9128202CC5ED00BD3FD8 /* PinCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE9127202CC5ED00BD3FD8 /* PinCollectionViewCell.swift */; };
 		72FE912A202CC76E00BD3FD8 /* PinCollectionViewCell+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72FE9129202CC76E00BD3FD8 /* PinCollectionViewCell+UI.swift */; };
@@ -107,6 +109,8 @@
 		729B43A0202E29FB00A466FF /* UserDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDecoder.swift; sourceTree = "<group>"; };
 		729B43A2202E39C000A466FF /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		72D32ECA20321D570067DE12 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		72D32ECD203248A80067DE12 /* PinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinService.swift; sourceTree = "<group>"; };
+		72D32ECF203248B70067DE12 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		72FE9123202CC3AD00BD3FD8 /* PhotosGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosGridViewController.swift; sourceTree = "<group>"; };
 		72FE9127202CC5ED00BD3FD8 /* PinCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCollectionViewCell.swift; sourceTree = "<group>"; };
 		72FE9129202CC76E00BD3FD8 /* PinCollectionViewCell+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PinCollectionViewCell+UI.swift"; sourceTree = "<group>"; };
@@ -330,6 +334,7 @@
 		7287A83320227899008C6938 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				72D32ECC203248950067DE12 /* Services */,
 				72D32EC920321D450067DE12 /* Routers */,
 				729B439F202E248200A466FF /* ViewModel */,
 				7287A83520227933008C6938 /* ApiManager.swift */,
@@ -371,6 +376,15 @@
 				72D32ECA20321D570067DE12 /* UserRouter.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		72D32ECC203248950067DE12 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				72D32ECD203248A80067DE12 /* PinService.swift */,
+				72D32ECF203248B70067DE12 /* UserService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		72FE912F202CF9D600BD3FD8 /* Navigation */ = {
@@ -724,10 +738,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				724AB072202BAEE50000C431 /* Pin.swift in Sources */,
+				72D32ECE203248A80067DE12 /* PinService.swift in Sources */,
 				7214A86B202A698D004360FD /* BoardListViewController+UI.swift in Sources */,
 				6E4236A2202C638600CE8D45 /* PinTableViewCell.swift in Sources */,
 				6E2129A5202D6BAA009E287E /* Colors.swift in Sources */,
 				724AB070202B80240000C431 /* PinterestManager.swift in Sources */,
+				72D32ED0203248B70067DE12 /* UserService.swift in Sources */,
 				7214A86F202A6F58004360FD /* BoardDecoder.swift in Sources */,
 				729B43A1202E29FB00A466FF /* UserDecoder.swift in Sources */,
 				6E9437B5202DCE11008756ED /* PhotoDetailsViewController+UI.swift in Sources */,
